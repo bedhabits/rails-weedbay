@@ -1,0 +1,8 @@
+<h1>All your products</h1>
+
+<ul>
+  <% @products.each do |product| %>
+    <li><%= link_to product.name, owner_product_path(product)%></li>
+  <% end %>
+</ul>
+
