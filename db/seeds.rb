@@ -5,8 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(username: "radu", email: "radu.popescu@priceedge.se", password: "Soricel5238", address: "Martins Sarmento 60")
-Product.create!(name: "Diamond Dust", weed_type: "sativa", origin: "Portland", price: 10, user_id: 1)
-Product.create!(name: "Girl Scout Cookies", weed_type: "hybrid", origin: "Cali", price: 11, user_id: 1)
-Product.create!(name: "Lemon Haze", weed_type: "sativa", origin: "Lisbon", price: 12, user_id: 1)
-Product.create!(name: "Black Widow", weed_type: "indica", origin: "Adam", price: 10, user_id: 1)
+puts "destroying all seeds"
+User.destroy_all
+Product.destroy_all
+
+puts "creating all seeds"
+user = User.create!(username: "radu", email: "radu.popescu@priceedge.se", password: "Soricel5238", address: "Martins Sarmento 60")
+Product.create!(name: "Diamond Dust", weed_type: "sativa", origin: "Portland", price: 10, user_id: user.id)
+Product.create!(name: "Girl Scout Cookies", weed_type: "hybrid", origin: "Cali", price: 11, user_id: user.id)
+Product.create!(name: "Lemon Haze", weed_type: "sativa", origin: "Lisbon", price: 12, user_id: user.id)
+Product.create!(name: "Black Widow", weed_type: "indica", origin: "Adam", price: 10, user_id: user.id)
+
+puts "done"
