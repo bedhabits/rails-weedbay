@@ -1,6 +1,9 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :product_orders
+  # def product_orders
+  #    ProductOrder.where(product_id: self.id)
+  #  end
   has_many :orders, through: :product_orders
   has_many :reviews, through: :orders
 
