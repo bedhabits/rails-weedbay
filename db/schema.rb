@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_204348) do
+ActiveRecord::Schema.define(version: 2020_02_13_190109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
-    t.string "status"
-    t.string "address"
+    t.string "status", default: "open", null: false
+    t.string "address", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_02_11_204348) do
   end
 
   create_table "product_orders", force: :cascade do |t|
-    t.integer "quantity"
+    t.integer "quantity", null: false
     t.float "price"
     t.bigint "product_id"
     t.bigint "order_id"
@@ -36,14 +36,13 @@ ActiveRecord::Schema.define(version: 2020_02_11_204348) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "origin"
-    t.string "unit"
+    t.string "name", null: false
+    t.string "origin", null: false
     t.string "photo_url"
-    t.float "price"
+    t.float "price", null: false
     t.float "thc"
     t.float "cbd"
-    t.string "type"
+    t.string "type", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,10 +52,10 @@ ActiveRecord::Schema.define(version: 2020_02_11_204348) do
   create_table "reviews", force: :cascade do |t|
     t.integer "stars"
     t.text "comment"
-    t.bigint "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_reviews_on_order_id"
+    t.bigint "product_order_id"
+    t.index ["product_order_id"], name: "index_reviews_on_product_order_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,8 +66,8 @@ ActiveRecord::Schema.define(version: 2020_02_11_204348) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username"
-    t.string "address"
+    t.string "username", null: false
+    t.string "address", null: false
     t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -78,5 +77,5 @@ ActiveRecord::Schema.define(version: 2020_02_11_204348) do
   add_foreign_key "product_orders", "orders"
   add_foreign_key "product_orders", "products"
   add_foreign_key "products", "users"
-  add_foreign_key "reviews", "orders"
+  add_foreign_key "reviews", "product_orders"
 end
