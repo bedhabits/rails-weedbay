@@ -28,7 +28,6 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new
     @order.user = current_user
-    # raise
     @order.save
     authorize @order
     redirect_to root_path
