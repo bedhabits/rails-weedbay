@@ -1,0 +1,10 @@
+<h1><%= @product.name %></h1>
+
+<ul>
+  <li>Weed Type: <%= @product.weed_type %></li>
+  <li>Origin: <%= @product.origin %></li>
+</ul>
+
+<p>Price: <%= @product.price %></p>
+
+<%= link_to 'Back to products', products_path %>
