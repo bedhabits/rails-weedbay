@@ -9,6 +9,6 @@
         <%= f.input :name, placeholder: "Weed name" %>
         <%= f.input :origin %>
         <%= f.input :price %>
-        <%= f.input :weed_type %>
+        <%= f.input :weed_type, collection: ["Indica", "Hybrid", "Sativa", "Rudelaris"] %>
         <%= f.submit "Submit", class: "btn btn-primary" %>
       <% end %>
