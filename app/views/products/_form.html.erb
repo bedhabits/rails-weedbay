@@ -1,0 +1,14 @@
+<%= simple_form_for [@product] do |f| %>
+        <% if @product.errors.any? %>
+          <ul>
+            <% @product.errors.full_messages do |message| %>
+          <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <%= f.input :name, placeholder: "Weed name" %>
+        <%= f.input :origin %>
+        <%= f.input :price %>
+        <%= f.input :weed_type %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
