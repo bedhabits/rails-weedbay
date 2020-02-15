@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_192732) do
+ActiveRecord::Schema.define(version: 2020_02_15_152451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "orders", force: :cascade do |t|
-    t.string "status", default: "open", null: false
-    t.string "address", null: false
+    t.string "status"
+    t.string "address"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_192732) do
   end
 
   create_table "product_orders", force: :cascade do |t|
-    t.integer "quantity", null: false
+    t.integer "quantity"
     t.float "price"
     t.bigint "product_id"
     t.bigint "order_id"
@@ -36,13 +36,14 @@ ActiveRecord::Schema.define(version: 2020_02_13_192732) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "origin", null: false
+    t.string "name"
+    t.string "origin"
+    t.string "unit"
     t.string "photo_url"
-    t.float "price", null: false
+    t.float "price"
     t.float "thc"
     t.float "cbd"
-    t.string "weed_type", null: false
+    t.string "weed_type"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -66,8 +67,7 @@ ActiveRecord::Schema.define(version: 2020_02_13_192732) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", null: false
-    t.string "address", null: false
+    t.string "address"
     t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
