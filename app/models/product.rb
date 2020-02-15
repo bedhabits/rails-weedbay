@@ -10,5 +10,5 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :origin, presence: true
   validates :price, presence: true, numericality: { greater_than: 0 }
-  validates :weed_type, inclusion: { in: %w(sativa indica hybrid ruderalis), message: "%{value} is not a valid weed type" }
+  validates :weed_type, inclusion: { in: %w(Sativa Indica Hybrid Ruderalis), message: "%{value} is not a valid weed type" }
 end
