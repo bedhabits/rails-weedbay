@@ -25,20 +25,13 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  def new
-    @order = Order.new
-    authorize @order
-  end
-
   def create
-    @order = Order.new(orders_params)
+    @order = Order.new
     @order.user = current_user
+    # raise
+    @order.save
     authorize @order
-    if @order.save
-      redirect_to order_path(@order)
-    else
-      render :new
-    end
+    redirect_to root_path
   end
 
   private
@@ -46,9 +39,5 @@ class OrdersController < ApplicationController
   def set_order
     @order = Order.find(params[:id])
     authorize @order
-  end
-
-  def orders_params
-    params.require(:orders).permit(:status, :address)
   end
 end
