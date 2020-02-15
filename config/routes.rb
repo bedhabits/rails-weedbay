@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'products#index'
   devise_for :users
-  root to: 'pages#home'
-  resources :products
   resources :orders
+  resources :products
 end
