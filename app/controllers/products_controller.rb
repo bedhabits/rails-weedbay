@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
+    authorize @product
     redirect_to root_path, notice: 'Product was deleted'
   end
 
