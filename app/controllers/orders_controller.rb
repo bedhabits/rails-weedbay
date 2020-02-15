@@ -31,7 +31,7 @@ class OrdersController < ApplicationController
     # raise
     @order.save
     authorize @order
-    redirect_to root_path
+    redirect_to order_path(@order)
   end
 
   private
