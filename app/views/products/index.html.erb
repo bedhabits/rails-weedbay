@@ -1,19 +1,26 @@
-<h1>All Products</h1>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>All Products</h1>
 
-<ul>
-  <% @products.each do |product| %>
-    <li>
-      <%= link_to product.name, product_path(product) %> <%= product.user.email %> -
-      <% if policy(product).edit?  %>
-        <%= link_to "Edit", edit_product_path(product) %> -
-      <% end %>
-      <% if policy(product).destroy? %>
-        <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'} %>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+      <ul>
+        <% @products.each do |product| %>
+          <li>
+            <%= link_to product.name, product_path(product) %> <%= product.user.email %> -
+            <% if policy(product).edit?  %>
+              <%= link_to "Edit", edit_product_path(product) %> -
+            <% end %>
+            <% if policy(product).destroy? %>
+              <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'} %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
 
-<% if policy(Product).new? %>
-  <%= link_to "add new product", new_product_path  %>
-<% end %>
+      <% if policy(Product).new? %>
+        <%= link_to "add new product", new_product_path  %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
