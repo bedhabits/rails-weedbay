@@ -3,8 +3,9 @@
   <% @cart.product_orders.each do |product_order| %>
     <li>
       Item:
-      <%= product_order.product.name %> -
-      <%= product_order.product.price %>
+      <%= product_order.product.name %> - Price:
+      <%= product_order.price %> - Quantity:
+      <%= product_order.quantity %>
       <%= link_to "+", product_order_add_path(id: product_order), method: :post  %>
       <%= link_to "-", product_order_reduce_path(id: product_order), method: :post  %>
       <%= link_to "Remove item", product_order_path(product_order), method: :delete  %>
