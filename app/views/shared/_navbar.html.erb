@@ -26,8 +26,12 @@
         </div>
 
 
-        <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <%= current_user.email %>
+        <%= cl_image_tag "pfpCqNjHAdQqASjzV4AQnHhb", class: "avatar dropdown-toggle mr-4", id: "navbarDropdown" %>
+
+        <div class="mr-2 mt-2">
+          <%= current_user.email %>
+
+        </div>
 
       <% else %>
 
