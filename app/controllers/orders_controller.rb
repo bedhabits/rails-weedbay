@@ -25,8 +25,12 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  def create
+  def new
     @order = Order.new
+  end
+
+  def create
+    @order = Order.new()
     @order.user = current_user
     # raise
     @order.save

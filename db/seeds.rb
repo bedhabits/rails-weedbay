@@ -10,11 +10,10 @@ User.destroy_all
 Product.destroy_all
 
 puts "creating all seeds"
-user = User.create!(username: "radu", email: "radu.popescu@priceedge.se", password: "Soricel5238", address: "Martins Sarmento 60")
-user = User.create!(username: "philip", email: "philip.oka@gmail.com", password: "123456", address: "Alvalade")
-Product.create!(name: "Diamond Dust", weed_type: "sativa", origin: "Portland", price: 10, user_id: user.id)
-Product.create!(name: "Girl Scout Cookies", weed_type: "hybrid", origin: "Cali", price: 11, user_id: user.id)
-Product.create!(name: "Lemon Haze", weed_type: "sativa", origin: "Lisbon", price: 12, user_id: user.id)
-Product.create!(name: "Black Widow", weed_type: "indica", origin: "Adam", price: 10, user_id: user.id)
+user = User.create!(email: "radu.popescu@priceedge.se", password: "Soricel5238", address: "Martins Sarmento 60")
+Product.create!(name: "Diamond Dust", weed_type: "Sativa", origin: "Portland", price: 10, user_id: user.id)
+Product.create!(name: "Girl Scout Cookies", weed_type: "Hybrid", origin: "Cali", price: 11, user_id: user.id)
+Product.create!(name: "Lemon Haze", weed_type: "Sativa", origin: "Lisbon", price: 12, user_id: user.id)
+Product.create!(name: "Black Widow", weed_type: "Indica", origin: "Adam", price: 10, user_id: user.id)
 
 puts "done"
