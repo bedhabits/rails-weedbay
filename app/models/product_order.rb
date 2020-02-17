@@ -8,4 +8,12 @@ class ProductOrder < ApplicationRecord
   def total_price
     self.quantity * self.price
   end
+
+  def sub_total
+    sum = 0
+    self.each do |product_order|
+      sum += product_order.total_price
+    end
+    return sum
+  end
 end
