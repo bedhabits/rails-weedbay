@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :current_cart
+
 
   include Pundit
   # Pundit: white-list approach.
@@ -21,6 +25,24 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def current_cart
+    if session[:cart_id]
+      cart = Cart.find(session[:cart_id])
+      if cart.present?
+        @current_cart = cart
+      else
+        session[:cart_id] = nil
+      end
+    end
+
+    if session[:cart_id] == nil
+      @current_cart = Cart.create
+      session[:cart_id] = @current_cart.id
+    end
+
+  end
+
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end

@@ -10,6 +10,7 @@
       <% if policy(product).destroy? %>
         <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'} %>
       <% end %>
+      <%= button_to "Add to cart", product_orders_path(product_id: product.id) %>
     </li>
   <% end %>
 </ul>
@@ -17,3 +18,5 @@
 <% if policy(Product).new? %>
   <%= link_to "add new product", new_product_path  %>
 <% end %>
+  <%= link_to "show cart", cart_path(@current_cart)  %>
+  <%= @session %>
