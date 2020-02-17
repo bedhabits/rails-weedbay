@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(version: 2020_02_17_180139) do
-=======
-ActiveRecord::Schema.define(version: 2020_02_16_175143) do
->>>>>>> cart-model
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,14 +38,12 @@ ActiveRecord::Schema.define(version: 2020_02_16_175143) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-<<<<<<< HEAD
-=======
+
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
->>>>>>> cart-model
   create_table "orders", force: :cascade do |t|
     t.string "status"
     t.string "address"
