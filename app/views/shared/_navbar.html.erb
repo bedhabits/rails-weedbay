@@ -31,7 +31,9 @@
         </li>
 
         <li class="nav-item dropdown mr-4">
-          <%= cl_image_tag "#{current_user.photo}", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
         </li>
 
         <button type="button" class="btn btn-outline-secondary btn-sm">
