@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update(orders_params)
+    if @order.update(order_params)
       redirect_to order_path(@order)
     else
       render :edit
