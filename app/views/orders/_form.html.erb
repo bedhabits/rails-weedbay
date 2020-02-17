@@ -1,0 +1,13 @@
+<%= simple_form_for [@order] do |f| %>
+        <% if @order.errors.any? %>
+          <ul>
+            <% @order.errors.full_messages do |message| %>
+          <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        <%= f.input :name, placeholder: "Order name" %>
+        <%= f.input :email, placeholder: "Your email" %>
+        <%= f.input :address, placeholder: "Your address" %>
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>

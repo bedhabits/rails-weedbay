@@ -4,8 +4,12 @@
 
   def index
     # @products = Product.all
-    @products = policy_scope(Product)
-    @session = session[:cart_id]
+    if params[:search]
+      @products = policy_scope(Product).where('name LIKE ?', "%#{params[:search][:query].capitalize}%")
+    else
+      @products = policy_scope(Product)
+    end
+      @session = session[:cart_id]
   end
 
   def new

@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 2020_02_17_180139) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "name"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
