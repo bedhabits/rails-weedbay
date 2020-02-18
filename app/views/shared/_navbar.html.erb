@@ -12,34 +12,6 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
-<<<<<<< HEAD
-        <div class="dropdown show mr-4">
-
-          <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menu
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <%= link_to "Home", root_path, class: "dropdown-item"  %>
-            <%= link_to "Profile", user_session_path, class: "dropdown-item"  %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-
-        </div>
-
-
-        <%= cl_image_tag "pfpCqNjHAdQqASjzV4AQnHhb", class: "avatar dropdown-toggle mr-4", id: "navbarDropdown" %>
-
-        <div class="mr-2 mt-2">
-          <%= current_user.email %>
-
-        </div>
-
-      <% else %>
-
-        <li class="nav-item mr-4">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-=======
-
         <li class="nav-item active mr-2">
 
           <div class="dropdown show">
@@ -76,7 +48,6 @@
       <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link mr-5" %>
->>>>>>> 34614ac6270664e2a60fdef1f296381a3dfbc642
         </li>
 
       <% end %>
