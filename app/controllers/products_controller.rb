@@ -1,10 +1,15 @@
-class ProductsController < ApplicationController
+  class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     # @products = Product.all
-    @products = policy_scope(Product)
+    if params[:search]
+      @products = policy_scope(Product).where('name LIKE ?', "%#{params[:search][:query].capitalize}%")
+    else
+      @products = policy_scope(Product)
+    end
+      @session = session[:cart_id]
   end
 
   def new

@@ -1,1 +1,8 @@
-<h1>All Your Orders</h1>
+<h2>All Orders</h2>
+
+<% @orders.each do |order| %>
+  <p>Name:<%= link_to order.name, order_path(order) %> </p>
+  <p>Email: <%= order.email %></p>
+  <p>Address: <%= order.address %> </p>
+  <p>SubTotal: <%= order.sub_total %></p>
+<% end %>
