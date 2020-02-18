@@ -25,9 +25,11 @@ class ProductOrdersController < ApplicationController
     end
 
     authorize @product_order
+
     # Save and redirect to cart show path
     @product_order.save
-    redirect_to cart_path(current_cart)
+    # redirect_to cart_path(current_cart)
+    render json: @product_order
   end
 
   def edit

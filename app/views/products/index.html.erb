@@ -16,7 +16,7 @@
             <% if policy(product).destroy? %>
               <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'} %>
             <% end %>
-            <%= button_to "Add to cart", product_orders_path(product_id: product.id) %>
+            <%= button_to "Add to cart", product_orders_path(product_id: product.id), method: :post %>
           </li>
         <% end %>
       </ul>
