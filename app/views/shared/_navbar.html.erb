@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "https://i1.wp.com/medicannabis.com.au/wp-content/uploads/2019/06/MediCannabis_Isotype_RGB-01-800x800.png?ssl=1" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,6 +12,7 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
+<<<<<<< HEAD
         <div class="dropdown show mr-4">
 
           <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,6 +38,45 @@
 
         <li class="nav-item mr-4">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+=======
+
+        <li class="nav-item active mr-2">
+
+          <div class="dropdown show">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Menu
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+              <!-- <a class="dropdown-item" href="root">Home</a> -->
+              <%= link_to "Home", root_path, class: "dropdown-item" %>
+              <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
+            </div>
+
+          </div>
+        </li>
+
+        <li class="nav-item dropdown mr-4">
+          <% if current_user.photo.attached? %>
+            <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+        </li>
+
+        <button type="button" class="btn btn-outline-secondary btn-sm">
+          Cart <span class="badge badge-light">0</span>
+          <span class="sr-only">unread messages</span>
+        </button>
+
+
+
+
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link mr-5" %>
+>>>>>>> 34614ac6270664e2a60fdef1f296381a3dfbc642
         </li>
 
       <% end %>

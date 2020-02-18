@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update(orders_params)
+    if @order.update(order_params)
       redirect_to order_path(@order)
     else
       render :edit
@@ -25,13 +25,29 @@ class OrdersController < ApplicationController
     redirect_to orders_path
   end
 
-  def create
+  def new
     @order = Order.new
-    @order.user = current_user
-    # raise
-    @order.save
     authorize @order
-    redirect_to order_path(@order)
+  end
+
+  def create
+    @order = Order.new(order_params)
+    @current_cart.product_orders.each do |product_order|
+      @order.product_orders << product_order
+      product_order.cart_id = nil
+    end
+
+    @order.user = current_user
+    authorize @order
+
+    if @order.save
+      redirect_to orders_path
+    else
+      render :new
+    end
+
+    Cart.destroy(session[:cart_id])
+    session[:cart_id] = nil
   end
 
   private
@@ -39,5 +55,9 @@ class OrdersController < ApplicationController
   def set_order
     @order = Order.find(params[:id])
     authorize @order
+  end
+
+  def order_params
+    params.require(:order).permit(:name, :email, :address, :user_id)
   end
 end
