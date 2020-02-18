@@ -7,5 +7,5 @@
 
 <p>Price: <%= @product.price %></p>
 
-<%= link_to 'Add to cart', orders_path, method: :post %>
+<%= link_to 'Add to cart', product_orders_path, method: :post %>
 <%= link_to 'Back to products', products_path %>

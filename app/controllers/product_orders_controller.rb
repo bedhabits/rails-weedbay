@@ -10,11 +10,8 @@ class ProductOrdersController < ApplicationController
     @product_order.product = @product
     @product_order.order = @order
 
-    if @product_order.save
-      redirect_to order_path(produt_order.order)
-    else
-      render :new
-    end
+    @product_order.save
+    redirect_to order_path(product_order.order)
   end
 
   def edit
@@ -22,7 +19,7 @@ class ProductOrdersController < ApplicationController
 
   def update
     if @product_order.update(product_order_params)
-      redirect_to order_path(produt_order.order)
+      redirect_to order_path(product_order.order)
     else
       render :edit
     end
@@ -30,7 +27,7 @@ class ProductOrdersController < ApplicationController
 
   def destroy
     @product_order.destroy
-    redirect_to order_path(produt_order.order)
+    redirect_to order_path(product_order.order)
   end
 
   private
