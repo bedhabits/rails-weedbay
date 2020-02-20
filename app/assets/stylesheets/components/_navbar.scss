@@ -1,12 +1,13 @@
-.navbar-lewagon {
+.navbar-weedbay {
   justify-content: space-between;
-  background: white;
+  background-color: rgba(43,43,43,1);
+
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-weedbay .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-weedbay .navbar-brand img {
   width: 40px;
 }
