@@ -1,5 +1,5 @@
 
-<div id="cart-dropdown" class="container">
+<div id="cart-dropdown" class="container" style="display:none; position:absolute; right:-795px; top:90px; color:#EEC319; border:1px solid #ced4da;">
   <div class="row">
     <div class="col-md-4 offset-md-14">
       <%= render @current_cart %>
@@ -52,17 +52,11 @@
             <% end %>
 
             <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn btn-secondary add-to-cart", remote: true %>
-          </li>
-        <% end %>
-      </ul>
-
           </div>
         </div>
       <% end %>
-
     </div>
   </div>
-
 </div>
 
 
