@@ -1,0 +1,14 @@
+<tr data-product-order-id="<%= product_order.id %>" data-product-id="<%= product_order.product_id %>">
+  <td><%= product_order.quantity %>&times;</td>
+  <td><%= product_order.product.name %></td>
+  <td class="item_price"><%= product_order.total_price %></td>
+  <td>
+    <%= link_to "+", product_order_add_path(id: product_order), method: :post, remote: true  %>
+  </td>
+  <td>
+    <%= link_to "-", product_order_reduce_path(id: product_order), method: :post, remote: true  %>
+  </td>
+  <td>
+    <%= link_to "x", product_order_path(product_order), method: :delete, remote: true %>
+  </td>
+</tr>

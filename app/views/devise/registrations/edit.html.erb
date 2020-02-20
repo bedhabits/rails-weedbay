@@ -1,7 +1,7 @@
 <div class="container mt-4">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <div class="col-sm-6">
-      <h2>Edit <%= resource_name.to_s.humanize %></h2>
+      <h1>Edit <%= resource_name.to_s.humanize %></h1>
 
 
 
@@ -32,17 +32,22 @@
         </div>
 
 
-        <div class="form-actions">
-          <%= f.button :submit, "Update" %>
+        <div class="form-actions mt-4">
+          <%= f.button :submit, "Update", class: "btn btn-secondary button-log" %>
         </div>
       <% end %>
 
-      <h3>Cancel my account</h3>
+    <!--   <%= link_to "Back", :back %> -->
 
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+     <!--  <div class="container"> -->
+        <div class="row mr-auto p-2">
+          <div class="d-inline p-2" style="color: rgb(108,117,124); font-size: 16px;">
+            <p>Unhappy? <%= link_to "Cancel", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "cancel-button" %> my account
+            </p>
 
-
-      <%= link_to "Back", :back %>
+          </div>
+        </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>

@@ -1,19 +1,12 @@
-<h1>Carts show</h1>
-<ul>
-  <% @cart.product_orders.each do |product_order| %>
-    <li>
-      Item:
-      <%= product_order.product.name %> - Price:
-      <%= product_order.price %> - Quantity:
-      <%= product_order.quantity %>
-      <%= link_to "+", product_order_add_path(id: product_order), method: :post  %>
-      <%= link_to "-", product_order_reduce_path(id: product_order), method: :post  %>
-      <%= link_to "Remove item", product_order_path(product_order), method: :delete  %>
-    </li>
-  <% end %>
-</ul>
+<div class="container mt-4">
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-6">
+      <%= render @cart %>
+    </div>
+  </div>
+</div>
 
-<h3>Subtotal: <%= @cart.sub_total %></h3>
 
-<%= link_to "Checkout", new_order_path %>
-<%= link_to "Empty cart", cart_path(@current_cart), method: :delete, data: {confirm: "Are you sure?" } %>
+
+
+

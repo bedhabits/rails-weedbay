@@ -1,33 +1,68 @@
-<div class="container mt-4">
+
+<div id="cart-dropdown" class="container">
   <div class="row">
-    <div class="col-sm-6">
-      <h1>All Products</h1>
+    <div class="col-md-4 offset-md-14">
+      <%= render @current_cart %>
+    </div>
+  </div>
+</div>
 
-      <%= render 'search' %>
+<div class="background">
+  <div class="bob-banner d-flex justify-content-center">
+
+    <div class="card" style="border: none;" id="search-card-id">
+      <div class="card-body search-card">
+        <div class="card-title">
+          <h1>Search live flavors. Order cannabis online.</h1>
+        </div>
+
+        <div class="simple-form">
+          <%= render 'search' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="outer top-product">
+    <div class="inner">
+      <h2 style="color: rgba(238, 195, 25, 1);">Top products</h2>
+    </div>
+    <div class="inner">
+      <%= image_tag "separation-line.png", alt: "Line", class: "separation-line" %>
+    </div>
+  </div>
 
 
-      <ul>
-        <% @products.each do |product| %>
-          <li>
-            <%= link_to product.name, product_path(product) %> <%= product.user.email %> -
+  <div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-sm-4 mt-4">
+          <div class="card product-card">
+
+            <%= link_to product.name, product_path(product), class: "product-name" %> <%= product.user.email %>
+            <%= image_tag product.photo_url, alt: "weedimage", size: 20*20 %>
+
             <% if policy(product).edit?  %>
               <%= link_to "Edit", edit_product_path(product) %> -
             <% end %>
             <% if policy(product).destroy? %>
               <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'} %>
             <% end %>
-            <%= button_to "Add to cart", product_orders_path(product_id: product.id) %>
+
+            <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn btn-secondary add-to-cart", remote: true %>
           </li>
         <% end %>
       </ul>
 
-
-      <% if policy(Product).new? %>
-        <%= link_to "add new product", new_product_path  %>
+          </div>
+        </div>
       <% end %>
-        <%= link_to "show cart", cart_path(@current_cart)  %>
-        <%= link_to "show orders", orders_path  %>
 
     </div>
   </div>
+
 </div>
+
+
