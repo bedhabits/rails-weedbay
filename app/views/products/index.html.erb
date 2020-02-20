@@ -33,6 +33,7 @@
           <div class="card product-card">
 
             <%= link_to product.name, product_path(product), class: "product-name" %> <%= product.user.email %>
+
             <% if policy(product).edit?  %>
               <%= link_to "Edit", edit_product_path(product) %> -
             <% end %>
