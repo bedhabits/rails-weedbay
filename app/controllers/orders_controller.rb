@@ -38,6 +38,7 @@ class OrdersController < ApplicationController
     end
 
     @order.user = current_user
+    @order.save
     authorize @order
 
     if @order.save
