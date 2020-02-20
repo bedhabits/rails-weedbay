@@ -4,8 +4,10 @@
 // //   counter.innerText = (event.detail[0]);
 // // });
 
-const cart = document.querySelector(".cart");
+const cart = document.querySelector("#cart-button");
 const cartDropdown = document.querySelector("#cart-dropdown");
+
+cartDropdown.style.display = "none"
 
 cart.addEventListener('click', (event) => {
   if (cartDropdown.style.display === "none") {

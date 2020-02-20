@@ -42,7 +42,7 @@
           <div class="card product-card">
 
             <%= link_to product.name, product_path(product), class: "product-name" %> <%= product.user.email %>
-            <%= image_tag product.photo_url, alt: "weedimage", size: 20*20 %>
+            <%= image_tag product.photo_url, alt: "weedimage", size: 100 %>
 
             <% if policy(product).edit?  %>
               <%= link_to "Edit", edit_product_path(product) %> -
@@ -52,10 +52,6 @@
             <% end %>
 
             <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn btn-secondary add-to-cart", remote: true %>
-          </li>
-        <% end %>
-      </ul>
-
           </div>
         </div>
       <% end %>
