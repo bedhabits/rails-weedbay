@@ -1,3 +1,12 @@
+
+<div id="cart-dropdown" class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-14">
+      <%= render @current_cart %>
+    </div>
+  </div>
+</div>
+
 <div class="background">
   <div class="bob-banner d-flex justify-content-center">
 
@@ -33,6 +42,7 @@
           <div class="card product-card">
 
             <%= link_to product.name, product_path(product), class: "product-name" %> <%= product.user.email %>
+            <%= image_tag product.photo_url, alt: "weedimage", size: 20*20 %>
 
             <% if policy(product).edit?  %>
               <%= link_to "Edit", edit_product_path(product) %> -
@@ -40,12 +50,19 @@
             <% if policy(product).destroy? %>
               <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'} %>
             <% end %>
-            <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn btn-secondary" %>
+
+            <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn btn-secondary add-to-cart", remote: true %>
+          </li>
+        <% end %>
+      </ul>
 
           </div>
         </div>
       <% end %>
+
     </div>
   </div>
 
 </div>
+
+

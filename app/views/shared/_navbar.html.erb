@@ -46,10 +46,13 @@
           </div>
 
           <div class="p-2 d-flex justify-content-center">
-              <button type="button" class="btn btn-outline-secondary btn-sm">
-                Cart <span class="badge badge-light">0</span>
-                <span class="sr-only">unread messages</span>
-              </button>
+            <button type="button" class="btn btn-outline-secondary btn-sm">
+               <%= link_to "Cart", "#", class: "cart" %>
+              <span class="badge badge-light" id="cart-count">
+               <%= @current_cart.total_qty %>
+               </span>
+              <span class="sr-only">unread messages</span>
+             </button>
           </div>
 
           <div class="p-2 d-flex justify-content-center">
