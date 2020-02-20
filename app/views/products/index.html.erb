@@ -43,15 +43,17 @@
 
             <%= link_to product.name, product_path(product), class: "product-name" %> <%= product.user.email %>
             <%= image_tag product.photo_url, alt: "weedimage", size: 20*20 %>
-
-            <% if policy(product).edit?  %>
-              <%= link_to "Edit", edit_product_path(product) %> -
+            <div class="d-flex justify-content-between">
+              <% if policy(product).edit?  %>
+              <%= button_to "Edit", edit_product_path(product), class: "btn btn-secondary" %>
             <% end %>
             <% if policy(product).destroy? %>
-              <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'} %>
+              <%= button_to "Destroy", product_path(product), class: "btn btn-secondary", method: :delete, data: {confirm: 'Are you sure'} %>
             <% end %>
 
             <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn btn-secondary add-to-cart", remote: true %>
+            </div>
+
           </div>
         </div>
       <% end %>
