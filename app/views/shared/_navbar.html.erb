@@ -38,7 +38,10 @@
         </li>
 
         <button type="button" class="btn btn-outline-secondary btn-sm">
-          Cart <span class="badge badge-light">0</span>
+          <%= link_to "Cart", "#", class: "cart" %>
+          <span class="badge badge-light" id="cart-count">
+            <%= @current_cart.total_qty %>
+          </span>
           <span class="sr-only">unread messages</span>
         </button>
 

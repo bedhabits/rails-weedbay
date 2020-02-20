@@ -1,11 +1,10 @@
 class ProductOrdersController < ApplicationController
-  before_action :set_product_order, only: [:edit, :update, :destroy]
+  before_action :set_product_order, only: [:edit, :update, :destroy, :add_quantity, :reduce_quantity]
 
   def create
     # Find associated product and current cart
     chosen_product = Product.find(params[:product_id])
     current_cart = @current_cart
-
 
     # If cart already has this product then find the relevant product_order and iterate quantity otherwise create a new product_order for this product
     if current_cart.products.include?(chosen_product)
@@ -25,9 +24,21 @@ class ProductOrdersController < ApplicationController
     end
 
     authorize @product_order
+
     # Save and redirect to cart show path
-    @product_order.save
-    redirect_to cart_path(current_cart)
+    respond_to do |format|
+      if @product_order.save
+        format.html { redirect_to cart_path(current_cart) }
+        format.js
+        format.json { render json: current_cart.total_qty }
+      else
+        format.html { render :new }
+        format.json { render json: @product_order.errors }
+      end
+    end
+
+    # redirect_to cart_path(current_cart)
+    # render json: @product_order
   end
 
   def edit
@@ -44,27 +55,22 @@ class ProductOrdersController < ApplicationController
   def destroy
     authorize @product_order
     @product_order.destroy
-    redirect_to cart_path(@current_cart)
   end
 
   def add_quantity
-    @product_order = ProductOrder.find(params[:id])
     @product_order.quantity += 1
     @product_order.price = @product_order.product.price
     @product_order.save
     authorize @product_order
-    redirect_to cart_path(@current_cart)
   end
 
   def reduce_quantity
-    @product_order = ProductOrder.find(params[:id])
     if @product_order.quantity > 1
       @product_order.quantity -= 1
     end
     @product_order.price = @product_order.product.price
     @product_order.save
     authorize @product_order
-    redirect_to cart_path(@current_cart)
   end
 
   private
