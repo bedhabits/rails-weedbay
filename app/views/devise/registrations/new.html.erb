@@ -1,7 +1,7 @@
 <div class="container mt-4">
-  <div class="row">
+  <div class="row d-flex justify-content-center">
     <div class="col-sm-6">
-      <h2>Sign up</h2>
+      <h1>Sign up</h1>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -18,11 +18,18 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+        <%= f.button :submit, "Sign up", class: "btn btn-secondary button-log" %>
       </div>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+    <div class="container">
+      <div class="row mt-4">
+        <button class="btn btn-outline render-links-button">
+          <%= render "devise/shared/links" %>
+        </button>
+      </div>
+    </div>
+
 
     </div>
   </div>

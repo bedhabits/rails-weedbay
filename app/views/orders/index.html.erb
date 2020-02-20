@@ -1,8 +1,17 @@
-<h2>All Orders</h2>
+<div class="container mt-4">
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-6">
+      <h1>All Orders</h1>
 
-<% @orders.each do |order| %>
-  <p>Name:<%= link_to order.name, order_path(order) %> </p>
-  <p>Email: <%= order.email %></p>
-  <p>Address: <%= order.address %> </p>
-  <p>SubTotal: <%= order.sub_total %></p>
-<% end %>
+      <% @orders.each do |order| %>
+        <p>Name: <%= link_to order.name, order_path(order) %> </p>
+        <p>Email: <%= order.email %></p>
+        <p>Address: <%= order.address %> </p>
+        <p>SubTotal: <%= order.sub_total %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+

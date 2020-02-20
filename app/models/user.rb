@@ -7,8 +7,6 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_one_attached :photo
 
-
-
   # user can buy and want to see bought orders
   # has_many :product_orders, through: :orders
 

@@ -1,14 +1,22 @@
-<h2>Show order</h2>
+<div class="container mt-4">
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-6">
+      <h1>Show order</h1>
 
-  <p>Name: <%= @order.name %></p>
-  <p>Email: <%= @order.email %></p>
-  <p>Product Orders: </p>
-  <ul>
-    <% @order.product_orders.each do |product_order| %>
-    <li><%= product_order.quantity %> x <%= product_order.product.name %> (price: <%= product_order.price%>)</li>
-    <% end %>
-  </ul>
-  <%= link_to "Edit order", edit_order_path(@order)  %>
-  <%= link_to "Back to orders", orders_path  %>
+      <p>Name: <%= @order.name %></p>
+      <p>Email: <%= @order.email %></p>
+      <p>Product Orders: </p>
+      <ul>
+        <% @order.product_orders.each do |product_order| %>
+          <li><%= product_order.quantity %> x <%= product_order.product.name %> (price: <%= product_order.price%>)</li>
+        <% end %>
+      </ul>
+      <%= link_to "Edit order", edit_order_path(@order)  %>
+      <%= link_to "Back to orders", orders_path  %>
+    </div>
+  </div>
+</div>
+
+
 
 

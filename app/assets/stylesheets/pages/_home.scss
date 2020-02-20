@@ -1,1 +1,82 @@
 // Specific CSS for your home-page
+
+body {
+  position: relative;
+  height: 3000px;
+  background-color: rgba(21, 21, 21, 0.8);
+}
+
+// .main-page-header {
+//   display: flex;
+//   justify-content: space-between;
+// }
+h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 40px;
+  /* identical to box height */
+  letter-spacing: 0.03em;
+
+  /* yellow */
+  color: #EEC319;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+}
+
+.separattion-line {
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  left: 186px;
+  top: 956px;
+
+  left: 0%;
+  right: 0%;
+  // top: -nan%;
+  // bottom: -nan%;
+  border: 3px solid #DBAF04;
+}
+
+.top-product {
+  display: grid;
+  justify-content: center;
+}
+
+// position: absolute;
+// width: 900px;
+// height: 0px;
+// left: 186px;
+// top: 956px;
+
+
+
+// /* Line 1 */
+
+// position: absolute;
+// left: 0%;
+// right: 0%;
+// top: -nan%;
+// bottom: -nan%;
+
+// border: 3px solid #DBAF04;
+
+
+// /* Top Search */
+
+// position: absolute;
+// width: 74px;
+// height: 28px;
+// left: 186px;
+// top: 902px;
+
+// font-family: Roboto;
+// font-style: normal;
+// font-weight: normal;
+// font-size: 24px;
+// line-height: 28px;
+
+// /* yellow */
+// color: #EEC319;
+
+
