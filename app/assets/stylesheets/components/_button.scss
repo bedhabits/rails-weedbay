@@ -36,3 +36,13 @@
     text-decoration: none;
     color: rgba(238, 195, 25, 1);
   }
+
+.round-bordered {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 35px;
+  font-size: 18px;
+  color: white;
+  height: 35px;
+  padding: 3px
+}
