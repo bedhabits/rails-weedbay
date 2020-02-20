@@ -1,0 +1,21 @@
+productOrderToRemove = document.querySelector("[data-product-order-id='<%= @product_order.id %>']");
+console.log(productOrderToRemove);
+productOrderToRemove.remove();
+
+// get cart qty
+cartQty = "<%= @current_cart.total_qty %>";
+
+// get cart count div
+cartCount = document.getElementById('cart-count');
+
+//set cart count to cart qty
+cartCount.innerHTML = cartQty;
+
+// get cart subtotal
+cartSubTotal = "<%= @current_cart.sub_total %>";
+
+// get total div
+cartSubTotalDiv = document.querySelector('.total_cell');
+
+// set subtotal to subtotaldiv
+cartSubTotalDiv.innerHTML = cartSubTotal;
