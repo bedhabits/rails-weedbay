@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-weedbay" style="position:sticky; top:0;">
+<div class="navbar navbar-expand-sm navbar-light navbar-weedbay">
   <div class="d-flex flex-row">
     <div class="d-flex align-items-strech ml-4">
       <div class="p-2">
@@ -47,21 +47,21 @@
 
 
           <div class="p-2 d-flex justify-content-between align-items-">
-            <button type="button" class="btn btn-outline-secondary btn-sm">
-              <div class="container">
-                <div class="row">
-                  <div class="col">
-                    <%= link_to "Cart", "#", class: "cart" %>
-                    <span class="badge badge-light" id="cart-count">
-                      <%= @current_cart.total_qty %>
-                    </span>
-
-                  </div>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <%= link_to "", class: "cart" do %>
+                  <i class="fas fa-shopping-cart fa-2x"></i>
+                  <% end %>
+                  <span class="badge badge-light" id="cart-count">
+                    <%= @current_cart.total_qty %>
+                  </span>
                 </div>
               </div>
-            </button>
           </div>
-
+          <div id="cart-dropdown" class="container mt-2">
+            <%= render @current_cart %>
+          </div>
           <div class="p-2 d-flex justify-content-center">
            <% else %>
               <div class="render-links-button nav-item d-flex justify-content-center mt-2" style="border-color: rgba(238, 195, 25, 1);">
