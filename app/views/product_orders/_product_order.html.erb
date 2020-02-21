@@ -9,6 +9,6 @@
     <%= button_to "-", product_order_reduce_path(id: product_order), class: "btn round-bordered incrementer minus", method: :post, remote: true  %>
   </td>
   <td>
-    <%= button_to "Remove", product_order_path(product_order), class: "btn btn-secondary", method: :delete, remote: true %>
+    <%= button_to "Remove", product_order_path(product_order), class: "btn btn-outline-secondary", method: :delete, remote: true %>
   </td>
 </tr>

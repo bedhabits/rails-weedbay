@@ -1,7 +1,9 @@
 .navbar-weedbay {
   justify-content: space-between;
   background-color: rgba(43,43,43,1);
-
+  position:sticky;
+  top:0;
+  z-index: 9999;
 }
 
 .navbar-weedbay .navbar-collapse {
@@ -10,4 +12,24 @@
 
 .navbar-weedbay .navbar-brand img {
   width: 40px;
+}
+
+
+#cart-dropdown {
+  position: absolute;
+  right: 63px;
+  top: 65px;
+  width:360px;
+  display: none;
+  color:white;
+  border:1px solid #ced4da;
+  background-color:#EEC319;
+}
+
+.total_line {
+  border-top: 2px solid green;
+}
+
+.fa-shopping-cart {
+  color:#EEC319;
 }
