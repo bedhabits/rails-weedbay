@@ -9,6 +9,7 @@ require 'csv'
 
 puts "destroying all seeds"
 Order.destroy_all
+ProductOrder.destroy_all
 User.destroy_all
 Product.destroy_all
 
