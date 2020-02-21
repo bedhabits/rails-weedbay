@@ -8,8 +8,10 @@
 require 'csv'
 
 puts "destroying all seeds"
+Order.destroy_all
 User.destroy_all
 Product.destroy_all
+
 
 puts "creating admin user"
 user = User.create!(email: "admin@weedbay.com", password: "123456", address: "Le wagon, Lisbon")
