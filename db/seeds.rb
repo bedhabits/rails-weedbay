@@ -7,5 +7,25 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-Product.update(photo_url: 'https://leafly-production.imgix.net/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fleafly-images%2Fflower-images%2Fbubba-kush.png?w=440&h=440&auto=format&fit=crop&dpr=2&q=25&ixlib=js-2.2.1&s=24c18fbc3ecf996465f17b1adbaaeda4')
+puts "destroying all seeds"
+User.destroy_all
+Product.destroy_all
 
+puts "creating admin user"
+user = User.create!(email: "admin@weedbay.com", password: "123456", address: "Le wagon, Lisbon")
+
+puts "creating all seeds"
+file = 'db/seeds_image.csv'
+csv_options = { col_sep: ';', headers: :first_row }
+CSV.foreach(file, csv_options) do |csv|
+  Product.create(
+                name: csv["name"],
+                weed_type: csv["weed_type"],
+                origin: csv["origin"],
+                photo_url: csv["photo_url"],
+                price: csv["price"],
+                user_id: user.id
+                )
+end
+
+puts "done"
