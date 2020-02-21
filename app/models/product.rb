@@ -12,4 +12,14 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
   validates :weed_type, inclusion: { in: %w(Sativa Indica Hybrid Ruderalis), message: "%{value} is not a valid weed type" }
   validates :photo_url, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :product_search,
+    against: [ :name, :origin, :weed_type ],
+    associated_against: {
+      user: [ :username, :email ]
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 end

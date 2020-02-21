@@ -5,7 +5,7 @@
   def index
     # @products = Product.all
     if params[:search]
-      @products = policy_scope(Product).where('name LIKE ?', "%#{params[:search][:query].capitalize}%")
+      @products = policy_scope(Product).product_search(params[:search][:query])
     else
       @products = policy_scope(Product)
     end
