@@ -9,6 +9,7 @@ const cartDropdown = document.querySelector("#cart-dropdown");
 
 
 cart.addEventListener('click', (event) => {
+  event.preventDefault();
   if (cartDropdown.style.display === "none") {
     cartDropdown.style.display = "block";
   } else {
