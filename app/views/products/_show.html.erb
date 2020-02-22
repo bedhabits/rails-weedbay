@@ -1,0 +1,19 @@
+<div class="modal fade bd-example-modal-lg" id="show-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="d-flex justify-content-between">
+        <h1><%= product.name %></h1>
+        <%= image_tag product.photo_url%>
+      </div>
+      <ul>
+        <li>Weed Type: <%= product.weed_type %></li>
+        <li>Origin: <%= product.origin %></li>
+      </ul>
+      <p>Price: <%= product.price %></p>
+      <%= button_to 'Add to cart', product_orders_path(product_id: product.id), remote: true, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
+
+
+
