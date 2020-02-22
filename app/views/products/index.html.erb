@@ -45,9 +45,9 @@
 
             <div class="card-body" style="padding: 1vh;">
 
-                  <%= link_to product.name, product_path(product), class: "card-title product-name" %>
+                  <%= link_to product.name, product_path(product), class: "card-title product-name", data: {toggle: 'modal', target: '#show-modal'}  %>
                   <p class="card-text mt-2"><%= product.user.email %></p>
-
+                  <%= render 'show', product: product %>
               <div class="container">
                 <div class="row d-flex justify-content-between">
                   <p class="card-text btn-admin-edit-destroy">
