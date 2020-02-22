@@ -1,8 +1,6 @@
 <table>
   <tbody id="cart-table">
-    <% cart.product_orders.each do |product_order| %>
-    <%= render 'product_orders/product_order', product_order: product_order %>
-    <% end %>
+    <%= render(cart.product_orders) %>
   </tbody>
     <tr class="total_line">
       <td colspan="2">
