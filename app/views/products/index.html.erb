@@ -44,8 +44,10 @@
             <%= image_tag product.photo_url, class: "card-img-top", style: "border-radius: 3px;" %>
 
             <div class="card-body" style="padding: 1vh;">
-
-                  <%= link_to product.name, product_path(product), class: "card-title product-name" %>
+                  <div class="d-flex justify-content-between">
+                    <%= link_to product.name, product_path(product), class: "card-title product-name" %>
+                    <p><strong><%= product.price %></strong></p>
+                  </div>
                   <p class="card-text mt-2"><%= product.user.email %></p>
 
               <div class="container">
