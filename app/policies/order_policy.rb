@@ -9,6 +9,10 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def sold_products?
+    record.user == user || user.admin
+  end
+
   def index
     record.user == user || user.admin
   end
