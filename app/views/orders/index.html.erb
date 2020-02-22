@@ -4,10 +4,12 @@
       <h1>All Orders</h1>
 
       <% @orders.each do |order| %>
-        <p>Name: <%= link_to order.name, order_path(order) %> </p>
-        <p>Email: <%= order.email %></p>
-        <p>Address: <%= order.address %> </p>
-        <p>SubTotal: <%= order.sub_total %></p>
+        <% if order.user == current_user || current_user.admin %>
+          <p>Name: <%= link_to order.name, order_path(order) %> </p>
+          <p>Email: <%= order.email %></p>
+          <p>Address: <%= order.address %> </p>
+          <p>SubTotal: <%= order.sub_total %></p>
+        <% end %>
       <% end %>
     </div>
   </div>
