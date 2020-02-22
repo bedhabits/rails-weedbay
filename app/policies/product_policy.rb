@@ -24,6 +24,6 @@ class ProductPolicy < ApplicationPolicy
   private
 
   def user_is_owner?
-    record.user == user
+    record.user == user || user.admin
   end
 end
