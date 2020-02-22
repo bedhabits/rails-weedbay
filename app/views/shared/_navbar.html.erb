@@ -20,7 +20,6 @@
                 <% if policy(Product).new? %>
                   <%= link_to "Add product", new_product_path, class: "dropdown-item" %>
                 <% end %>
-
                   <%= link_to "Show orders", orders_path, class: "dropdown-item" %>
                   <%= link_to 'Show sold orders', sold_products_orders_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
@@ -39,11 +38,11 @@
         <div class="d-flex align-items-stretch mr-4">
 
           <div class="p-2 d-flex justify-content-center">
-              <li class="nav-item dropdown">
-                <% if current_user.photo.attached? %>
-                  <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% end %>
-              </li>
+            <li class="nav-item dropdown">
+              <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
+            </li>
           </div>
 
 
@@ -51,22 +50,27 @@
             <div class="container">
               <div class="row">
                 <div class="col">
+
                   <%= link_to "", class: "cart" do %>
-                  <i class="fas fa-shopping-cart fa-2x"></i>
+                    <i class="fas fa-shopping-cart fa-2x"></i>
                   <% end %>
+
                   <span class="badge badge-light" id="cart-count">
                     <%= @current_cart.total_qty %>
                   </span>
                 </div>
               </div>
           </div>
+
           <div id="cart-dropdown" class="container mt-2">
+
             <%= render 'carts/cart', cart: @current_cart %>
+
           </div>
           <div class="p-2 d-flex justify-content-center">
            <% else %>
               <div class="render-links-button nav-item d-flex justify-content-center mt-2" style="border-color: rgba(238, 195, 25, 1);">
-                  <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
               </div>
 
            <% end %>
