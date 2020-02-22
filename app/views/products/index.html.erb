@@ -1,12 +1,3 @@
-
-<!-- <div id="cart-dropdown" class="container" style="display:none; position:absolute; right:-795px; top:90px; color:#EEC319; border:1px solid #ced4da;">
-  <div class="row">
-    <div class="col-md-4 offset-md-14">
-      <%= render @current_cart %>
-    </div>
-  </div>
-</div> -->
-
 <div class="background">
   <div class="bob-banner d-flex justify-content-center">
 
@@ -26,7 +17,7 @@
   <br/>
 
   <div class="outer top-product">
-    <div class="inner">
+    <div class="inner" id="top-products">
       <h2 style="color: rgba(238, 195, 25, 1);">Top products</h2>
     </div>
     <div class="inner">
@@ -36,39 +27,9 @@
 
 
   <div class="container">
-    <div class="row">
-      <% @products.each do |product| %>
-        <div class="col-sm-4 mt-4">
-          <div class="card product-card">
-
-            <%= image_tag product.photo_url, class: "card-img-top", style: "border-radius: 3px;" %>
-
-            <div class="card-body" style="padding: 1vh;">
-
-                  <%= link_to product.name, product_path(product), class: "card-title product-name" %>
-                  <p class="card-text mt-2"><%= product.user.email %></p>
-
-              <div class="container">
-                <div class="row d-flex justify-content-between">
-                  <p class="card-text btn-admin-edit-destroy">
-                    <% if policy(product).edit?  %>
-                      <%= link_to "Edit", edit_product_path(product), class: "btn-admin-edit-destroy" %> -
-                    <% end %>
-                    <% if policy(product).destroy? %>
-                      <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'}, class: "btn-admin-edit-destroy" %>
-                    <% end %>
-                  </p>
-
-                  <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn btn-secondary add-to-cart", remote: true %>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      <% end %>
+    <div class="row" id="products">
+      <%= render 'products', products: @products %>
     </div>
   </div>
-</div>
 
 

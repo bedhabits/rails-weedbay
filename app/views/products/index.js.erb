@@ -1,0 +1,7 @@
+// get div to replace
+products = document.getElementById("products");
+topProducts = document.getElementById("top-products");
+
+products.innerHTML = "<%= j render 'products', products: @products %>"
+
+topProducts.scrollIntoView(true);

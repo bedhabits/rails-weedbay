@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root to: 'products#index'
   devise_for :users
   resources :products
-  resources :orders
+  resources :orders do
+    collection do
+      get 'sold_products'
+    end
+  end
 
   get 'carts/:id', to: 'carts#show', as: :cart
   delete 'carts/:id', to: 'carts#destroy'

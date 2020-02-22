@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[edit update show destroy]
+  before_action :skip_authorization, only: :sold_products
 
   def index
     # the current user orders
@@ -18,6 +19,10 @@ class OrdersController < ApplicationController
   end
 
   def show
+  end
+
+  def sold_products
+    @orders = current_user.products.collect(&:orders).flatten.uniq
   end
 
   def destroy

@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-weedbay">
+<div class="navbar navbar-expand-sm navbar-light navbar-weedbay fixed-top">
   <div class="d-flex flex-row">
     <div class="d-flex align-items-strech ml-4">
       <div class="p-2">
@@ -20,8 +20,8 @@
                 <% if policy(Product).new? %>
                   <%= link_to "Add product", new_product_path, class: "dropdown-item" %>
                 <% end %>
-
-                <%= link_to "Show orders", orders_path, class: "dropdown-item" %>
+                  <%= link_to "Show orders", orders_path, class: "dropdown-item" %>
+                  <%= link_to 'Show sold orders', sold_products_orders_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
             </div>
