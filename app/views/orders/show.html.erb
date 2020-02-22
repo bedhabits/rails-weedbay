@@ -11,6 +11,7 @@
           <li><%= product_order.quantity %> x <%= product_order.product.name %> (price: <%= product_order.price%>)</li>
         <% end %>
       </ul>
+      <p><strong>Total: <%= @order.sub_total %></strong></p>
       <%= link_to "Edit order", edit_order_path(@order)  %>
       <%= link_to "Back to orders", orders_path  %>
     </div>

@@ -9,15 +9,19 @@ class OrderPolicy < ApplicationPolicy
     true
   end
 
+  def index
+    record.user == user || user.admin
+  end
+
   def show?
-    record.user == user
+    record.user == user || user.admin
   end
 
   def destroy?
-    record.user == user
+    record.user == user || user.admin
   end
 
   def update?
-    record.user == user
+    record.user == user || user.admin
   end
 end
