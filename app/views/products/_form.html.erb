@@ -1,15 +1,17 @@
 <%= simple_form_for [@product] do |f| %>
-<ul>
-  <% if @product.errors.any? %>
-    <% @product.errors.full_messages do |message| %>
-      <li><%= message %></li>
+  <ul>
+    <% if @product.errors.any? %>
+      <% @product.errors.full_messages do |message| %>
+        <li><%= message %></li>
+      <% end %>
     <% end %>
-  <% end %>
-</ul>
-  <%= f.input :name, placeholder: "Weed name" %>
-  <%= f.input :origin %>
-  <%= f.input :price %>
-  <%= f.input :weed_type, collection: ["Indica", "Hybrid", "Sativa", "Rudelaris"] %>
-  <%= f.input :photo_url %>
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  </ul>
+  <div class="form-inputs">
+    <%= f.input :name, placeholder: "Weed name" %>
+    <%= f.input :origin %>
+    <%= f.input :price %>
+    <%= f.input :weed_type, collection: ["Indica", "Hybrid", "Sativa", "Rudelaris"] %>
+    <%= f.input :photo_url %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
 <% end %>

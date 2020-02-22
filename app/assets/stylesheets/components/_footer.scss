@@ -1,0 +1,56 @@
+// .footer-weedbay {
+//   position: relative;
+//   background-color: $yellow;
+// }
+.footer {
+  // position: sticky;
+  left:0px;
+  bottom:0px;
+  width:100%;
+  background: $yellow;
+  color: white;
+
+  .links {
+    margin-right: 0px;
+
+    ul {list-style-type: none;}
+    li a {
+      color: white;
+      transition: color .2s;
+
+      &:hover {
+        text-decoration:none;
+        color:#4180CB;
+        }
+    }
+  }
+  .about-company{
+    i{font-size: 25px;}
+    a{
+      color:white;
+      transition: color .2s;
+      &:hover{color:#4180CB}
+    }
+  }
+  .location{
+    i{font-size: 18px;}
+  }
+}
+
+.logo-footer {
+  position: relative;
+  height: 100px;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.copyright {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  p {
+      border-top:1px solid rgba(255,255,255,.1);
+  }
+}
