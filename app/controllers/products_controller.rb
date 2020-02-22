@@ -52,7 +52,7 @@
   private
 
   def product_params
-    params.require(:product).permit(:name, :origin, :price, :weed_type)
+    params.require(:product).permit(:name, :origin, :price, :weed_type, :photo_url)
   end
 
   def set_product

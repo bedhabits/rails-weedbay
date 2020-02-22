@@ -1,17 +1,16 @@
 <div class="container mt-4">
   <div class="row d-flex justify-content-center">
     <div class="col-sm-6">
-      <h1>All my Orders</h1>
+      <h1>Sold Orders</h1>
 
       <% @orders.each do |order| %>
-        <% if order.user == current_user || current_user.admin %>
       <div class="card mb-5">
         <div class="card-body">
-          <h5 class="card-title">Name: <%= order.name %></h5>
+          <h5 class="card-title">Order from: <%= order.name %></h5>
           <p class="card-text">Email: <%= order.email %></p>
           <p class="card-text">Address: <%= order.address %> </p>
           <h6><strong>Products</strong></h6>
-          <% products = order.products.map { |product| product } %>
+          <% products = order.products.select {|product| product.user == current_user} %>
           <% products.each do |product| %>
           <p class="card-text"><%= link_to product.name , product_path(product) %>
           <%= product.price %></p>
@@ -22,13 +21,12 @@
             <% products.each {|product| total+=product.price} %>
             <%= total %>
           </strong></p>
-        <% end %>
+
         </div>
       </div>
       <% end %>
+
     </div>
   </div>
 </div>
-
-
 

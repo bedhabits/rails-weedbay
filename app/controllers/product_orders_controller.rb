@@ -28,7 +28,7 @@ class ProductOrdersController < ApplicationController
     # Save and redirect to cart show path
     respond_to do |format|
       if @product_order.save
-        format.html { redirect_to cart_path(current_cart) }
+        format.html { redirect_to products_path }
         format.js
         format.json { render json: current_cart.total_qty }
       else
