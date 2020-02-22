@@ -52,10 +52,14 @@
                 <div class="row d-flex justify-content-between">
                   <p class="card-text btn-admin-edit-destroy">
                     <% if policy(product).edit?  %>
-                      <%= link_to "Edit", edit_product_path(product), class: "btn-admin-edit-destroy" %> -
+                      <%= link_to edit_product_path(product) do %>
+                        <i class="fas fa-edit fa"></i>
+                      <% end %>
                     <% end %>
                     <% if policy(product).destroy? %>
-                      <%= link_to "Destroy", product_path(product), method: :delete, data: {confirm: 'Are you sure'}, class: "btn-admin-edit-destroy" %>
+                      <%= link_to product_path(product), method: :delete, data: {confirm: 'Are you sure'} do %>
+                        <i class="fas fa-trash fa"></i>
+                      <% end %>
                     <% end %>
                   </p>
 
