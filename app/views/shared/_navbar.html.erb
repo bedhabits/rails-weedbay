@@ -60,7 +60,7 @@
               </div>
           </div>
           <div id="cart-dropdown" class="container mt-2">
-            <%= render @current_cart %>
+            <%= render 'carts/cart', cart: @current_cart %>
           </div>
           <div class="p-2 d-flex justify-content-center">
            <% else %>
