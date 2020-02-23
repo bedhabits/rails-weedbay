@@ -37,7 +37,7 @@
     authorize @product
 
     if @product.save
-      redirect_to @product, notice: 'Product was created'
+      redirect_to root_path, notice: 'Product was created'
     else
       render :new
     end
