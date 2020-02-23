@@ -4,16 +4,12 @@
     <%= render 'product_orders/product_order', product_order: product_order %>
     <% end %>
   </tbody>
-    <tr class="total_line">
-      <td colspan="2">
-        <strong>Total</strong>
-      </td>
-      <td class="total_cell">
-        <strong><%= cart.sub_total %></strong>
-      </td>
-    </tr>
 </table>
+<ul class="total-cart">
+  <li><strong>TOTAL:</strong></li>
+  <li class="total_cell"><strong><%=cart.sub_total %></strong></li>
+</ul>
 <div class="d-flex justify-content-between mt-2 mb-2">
-  <%= button_to "Checkout", new_order_path, class: "btn btn-primary", method: :get %>
-  <%= button_to "Empty cart", cart_path(cart), class: "btn btn-link", method: :delete, data: {confirm: "Are you sure?" } %>
+  <%= link_to "CHECKOUT", new_order_path, class: "weedbay-btn"%>
+  <%= link_to 'EMPTY CART' ,cart_path(cart), method: :delete, data: {confirm: "Are you sure? Your whole cart will be empty" } %>
 </div>
