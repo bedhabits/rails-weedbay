@@ -1,4 +1,10 @@
 <table>
+  <tr style="display: none;">
+    <th>Products</th>
+    <th>Price</th>
+    <th></th>
+    <th>Quantity</th>
+  </tr>
   <tbody id="cart-table">
     <% cart.product_orders.each do |product_order| %>
     <%= render 'product_orders/product_order', product_order: product_order %>

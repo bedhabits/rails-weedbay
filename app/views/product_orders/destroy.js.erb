@@ -1,3 +1,4 @@
+tableHeaders = document.querySelector('#cart-dropdown > table > tbody:nth-child(1) > tr')
 productOrderToRemove = document.querySelector("[data-product-order-id='<%= @product_order.id %>']");
 console.log(productOrderToRemove);
 productOrderToRemove.remove();
@@ -19,3 +20,7 @@ cartSubTotalDiv = document.querySelector('.total_cell');
 
 // set subtotal to subtotaldiv
 cartSubTotalDiv.innerHTML = cartSubTotal;
+
+
+// // hide the table headers
+tableHeaders.style.display = 'none';
