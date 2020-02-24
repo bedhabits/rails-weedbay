@@ -95,3 +95,12 @@
 th, td{
   padding: 8px 8px;
 }
+
+.empty-cart{
+  color: white;
+  &:hover{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
