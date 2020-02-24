@@ -3,6 +3,10 @@
 body {
   position: relative;
   background-color: rgba(21, 21, 21, 0.8);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 // .main-page-header {
@@ -42,6 +46,9 @@ h1 {
   justify-content: center;
 }
 
+.container-padding {
+  padding-top: 82px;
+}
 // position: absolute;
 // width: 900px;
 // height: 0px;
