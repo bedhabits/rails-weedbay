@@ -15,27 +15,34 @@
       <p class="card-text mt-2"><%= product.user.email %></p>
 
       <%= render 'show', product: product %>
+      <% if user_signed_in? %>
+        <div class="container">
+          <div class="row d-flex justify-content-between">
+            <p class="card-text btn-admin-edit-destroy">
+              <% if policy(product).edit? %>
+                <%= link_to edit_product_path(product) do %>
+                  <i class="fas fa-edit fa"></i>
+                <% end %>
+              <% end %>
 
+              <% if policy(product).destroy? %>
+                <%= link_to product_path(product), method: :delete, data: {confirm: 'Are you sure'} do %>
+                  <i class="fas fa-trash fa"></i>
+                <% end %>
+              <% end %>
+            </p>
+
+            <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn add-to-cart", remote: true %>
+          </div>
+        </div>
+      <% else %>
       <div class="container">
         <div class="row d-flex justify-content-between">
-          <p class="card-text btn-admin-edit-destroy">
-            <% if policy(product).edit?  %>
-              <%= link_to edit_product_path(product) do %>
-                <i class="fas fa-edit fa"></i>
-              <% end %>
-            <% end %>
-
-            <% if policy(product).destroy? %>
-              <%= link_to product_path(product), method: :delete, data: {confirm: 'Are you sure'} do %>
-                <i class="fas fa-trash fa"></i>
-              <% end %>
-            <% end %>
-          </p>
-
-          <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn add-to-cart", remote: true %>
-
+          <p></p>
+          <%= button_to "Add to cart", new_user_session_path, class: "btn add-to-cart" %>
         </div>
       </div>
+      <% end -%>
     </div>
     </div>
   </div>
