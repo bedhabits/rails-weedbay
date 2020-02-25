@@ -16,6 +16,7 @@
   <li class="total_cell">$<strong><%=cart.sub_total %></strong></li>
 </ul>
 <div class="d-flex justify-content-between mt-2 mb-2">
+
   <%= link_to "CHECKOUT", new_order_path, class: "weedbay-btn"%>
   <%= link_to 'EMPTY CART' ,cart_path(cart), class: "empty-cart", method: :delete, data: {confirm: "Are you sure? Your whole cart will be empty" } %>
 </div>
