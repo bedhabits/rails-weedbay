@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'products#index'
   devise_for :users
-  resources :products
+  resources :products, except: :create
   resources :orders do
     collection do
       get 'sold_products'
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get 'product_orders/:id', to: 'product_orders#show', as: :product_order
   delete 'product_orders/:id', to: 'product_orders#destroy'
 
+  post 'products/', to: 'products#create', as: :product_create
 end
