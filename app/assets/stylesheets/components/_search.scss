@@ -8,15 +8,26 @@
 
 #search-card-id {
   background-color: rgba(21,21,21,0.01);
-  border-radius: 18px;
+  // border-radius: 18px;
 
   // position: absolute;
   width: 56rem;
-  height: 187px;
+  height: 210px;
   align-items: center;
-  margin: 0px;
-  // left: 362px;
-  // top: 474px;
+  margin: 20px;
+
+  h1 {
+    font-family: $my-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 52px;
+    line-height: 62px;
+    letter-spacing: 0.02em;
+    /* yellow */
+    color: #EEC319;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+
+  }
 }
 
 .search-card {
@@ -24,68 +35,25 @@
 
   // border: 1px solid #000000;
   box-sizing: border-box;
-  border-radius: 18px;
-  margin: 21px;
+  border-radius: 10px;
+  margin: 16px;
   width: 900px;
 }
 
 .simple-form {
     display: flex;
     justify-content: center;
-    padding-right: 11px;
   }
 
+#search_query {
+  border-radius: 4px;
+}
 
-// .search-form-control .form-control:focus {
-//   border: 1px solid #1EDD88;
-//   outline: none !important;
-//   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-// }
+/* search-text */
 
-// .search-form-index {
-//   position: absolute;
-//   width: 715px;
-//   height: 187px;
-//   // left: 362px;
-//   // top: 474px;
-
-// .search-rec-box {
-//   position: absolute;
-//   left: 0%;
-//   right: 0%;
-//   top: 0%;
-//   bottom: 0%;
-
-//   background: #000000;
-//   opacity: 0.36;
-//   border: 1px solid #000000;
-//   box-sizing: border-box;
-//   border-radius: 8px;
-//   z-index: 1;
-// }
-
-
-// .search-field {
-//     position: absolute;
-//     left: 15.1%;
-//     right: 16.36%;
-//     top: 58.29%;
-//     bottom: 22.46%;
-//     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-//     .rec-search-field {
-//         position: absolute;
-//         left: 0%;
-//         right: 0%;
-//         top: 0%;
-//         bottom: 0%;
-//         background: #FFFFFF;
-//         border-radius: 8px;
-//       }
-//   }
-
-
-
-
-
-
+// font-family: Advent Pro;
+// font-style: normal;
+// font-weight: 500;
+// font-size: 52px;
+// line-height: 62px;
+// letter-spacing: 0.05em;
