@@ -1,7 +1,10 @@
 <% products.each do |product| %>
   <div class="col-sm-4 mt-4">
     <div class="card product-card">
+
+    <%= link_to product_path(product), data: {toggle: 'modal', target: '#show-modal'} do %>
       <%= image_tag product.photo_url, class: "card-img-top", style: "border-radius: 3px;" %>
+    <% end %>
 
     <div class="card-body" style="padding: 1vh;">
       <div class="d-flex justify-content-between">
