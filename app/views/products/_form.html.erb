@@ -12,6 +12,8 @@
     <%= f.input :price %>
     <%= f.input :weed_type, collection: ["Indica", "Hybrid", "Sativa", "Rudelaris"] %>
     <%= f.input :photo_url %>
-    <%= f.submit "Submit", class: "btn btn-primary" %>
+  </div>
+  <div class="form-actions mt-4">
+    <%= f.submit "Submit", class: "btn btn-success button-log p-0" %>
   </div>
 <% end %>

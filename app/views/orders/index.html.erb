@@ -1,8 +1,9 @@
 <div class="container mt-4">
   <div class="row d-flex justify-content-center">
-    <div class="col-sm-6">
-      <h1>All my Orders</h1>
 
+    <div class="col-sm-6 format-form">
+      <h1>All my Orders</h1>
+      
       <% @orders.each do |order| %>
         <% if order.user == current_user || current_user.admin %>
       <div class="card mb-5">
@@ -14,7 +15,7 @@
           <% products = order.products.map { |product| product } %>
           <% products.each do |product| %>
           <p class="card-text"><%= link_to product.name , product_path(product) %>
-          <%= product.price %></p>
+          $<%= product.price %></p>
           <% end %>
           <hr>
           <p class="card-text"><strong>SubTotal:
@@ -22,6 +23,8 @@
             <% products.each {|product| total+=product.price} %>
             <%= total %>
           </strong></p>
+          <%= link_to 'Edit', edit_order_path(order) %>
+          <%= link_to 'Delete', order_path(order), method: :delete %>
         <% end %>
         </div>
       </div>

@@ -1,12 +1,23 @@
+.add-to-cart {
+  background-color: rgba(238, 195, 25, 1);
+  color: white;
+  border-color: rgba(238, 195, 25, 1);
+  &:hover {
+    background-color: rgba(238, 195, 25, 0.8);
+  }
+}
+
 .button-log {
   display: flex;
   // justify-content: center;
   width: 100%;
   height: 40px;
   font-size: larger;
-  background-color: rgba(238, 195, 25, 1);
+  // background-color: rgba(238, 195, 25, 1);
   justify-content: center;
   font-weight: medium;
+  font-family: $my-font;
+  letter-spacing: 1px;
 }
 
 .render-links-button {
@@ -16,16 +27,18 @@
   justify-content: space-between;
   height: 40px;
 
+  &:hover {
+    background-color: rgba(250,250,250,0.3);
+    box-shadow: 1px 1px 10px rgba(245,245,245,0.2);
+    border-color: rgba(238, 195, 25, 1);
+  }
+
   a {
     text-decoration: none;
     color: rgba(238, 195, 25, 1);
   }
 }
 
-.render-links-button:hover {
-  background-color: rgba(250,250,250,0.3);
-  box-shadow: 1px 1px 10px rgba(245,245,245,0.2);
-}
 
 .cancel-button {
   color: rgb(108,117,124);
@@ -46,7 +59,6 @@
   }
 }
 
-
 .round-bordered {
   border: 1px solid green;
   border-radius: 50%;
@@ -64,4 +76,12 @@
 
 .fa-trash {
   color:#EEC319;
+}
+
+.links-login {
+  justify-content: center;
+}
+
+.forgot-pass a {
+  color: #929eaa;
 }
