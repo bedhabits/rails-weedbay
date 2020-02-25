@@ -21,14 +21,18 @@ puts "creating all seeds"
 file = 'db/seeds_image.csv'
 csv_options = { col_sep: ';', headers: :first_row }
 CSV.foreach(file, csv_options) do |csv|
-  Product.create(
+  product = Product.new(
                 name: csv["name"],
                 weed_type: csv["weed_type"],
                 origin: csv["origin"],
-                photo_url: csv["photo_url"],
                 price: csv["price"],
                 user_id: user.id
                 )
+  #upload da imagem para o cloudinary
+  file = URI.open(csv["photo_url"])
+  product.photo_url.attach(io: file, filename: csv["photo_url"], content_type: 'image/jpeg')
+  product.save
+
 end
 
 puts "done"
