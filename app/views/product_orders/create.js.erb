@@ -1,4 +1,5 @@
 productToAdd = document.querySelector("[data-product-id='<%= @product_order.product_id %>']");
+tableHeaders = document.querySelector('#cart-dropdown > table > tbody:nth-child(1) > tr')
 
 // render cart
 productOrderToAdd ="<%= j render 'product_order', product_order: @product_order %>";
@@ -29,6 +30,9 @@ cartSubTotal = "<%= @current_cart.sub_total %>";
 cartSubTotalDiv = document.querySelector('.total_cell');
 
 // set subtotal to subtotaldiv
-cartSubTotalDiv.innerHTML = cartSubTotal;
+cartSubTotalDiv.innerHTML = `<strong>$${cartSubTotal}</strong>`;
+
+// update the table headers
+tableHeaders.style.display ='table-row';
 
 
