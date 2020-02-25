@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :product_orders
+  has_one_attached :photo_url
   # def product_orders
   #    ProductOrder.where(product_id: self.id)
   #  end

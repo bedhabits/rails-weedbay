@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get 'product_orders/:id', to: 'product_orders#show', as: :product_order
   delete 'product_orders/:id', to: 'product_orders#destroy'
 
+
 end

@@ -1,0 +1,9 @@
+<h1>Create product <%= @product.name %></h1>
+<p><%= @product.origin %></p>
+<p><%= @product.price %></p>
+<p><%= @product.weed_type %></p>
+
+<% if product.photo_url.attached? %>
+  <%= cl_image_tag @product.photo_url.key %>
+<% end %>
+
