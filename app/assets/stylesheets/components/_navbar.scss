@@ -1,9 +1,6 @@
 .navbar-weedbay {
   justify-content: space-between;
   background-color: rgba(43,43,43,1);
-  // position:sticky;
-  // top:0;
-  // z-index: 9999;
 }
 
 .navbar-weedbay .navbar-collapse {
@@ -11,9 +8,14 @@
 }
 
 .navbar-weedbay .navbar-brand img {
-  width: 40px;
+  width: 50px;
 }
 
+.navbar-brand {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+}
 
 #cart-dropdown {
   position: absolute;
@@ -33,3 +35,83 @@
 .fa-shopping-cart {
   color:#EEC319;
 }
+
+.menu-list {
+  background-color: #eec319;
+  background-clip: initial;
+  border: 1px solid #495057;
+  border-radius: 3px;
+}
+
+
+// .logo-text {
+//   /* logo-text */
+
+//   position: absolute;
+//   width: 316px;
+//   height: 124px;
+//   left: 650px;
+//   top: -21px;
+//   margin-top: -11px;
+
+//   .w-text {
+//     position: absolute;
+//     left: 0%;
+//     right: 85.13%;
+//     top: 21.38%;
+//     bottom: 17.65%;
+
+//     font-family: against myself;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 76px;
+//     line-height: 87px;
+//     letter-spacing: 0.05em;
+
+//     /* yellow */
+//     color: #EEC319;
+//     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+
+//   }
+
+//   .eedbay-text {
+//     position: absolute;
+//     left: 16.77%;
+//     right: 14.24%;
+//     top: 48.97%;
+//     bottom: 22.06%;
+
+//     font-family: against myself;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 46px;
+//     line-height: 53px;
+//     /* identical to box height */
+//     letter-spacing: 0.05em;
+
+//     /* yellow */
+//     color: #EEC319;
+//     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+//   }
+
+
+//   .exclamation-mark {
+//     /* exclamation-mark */
+
+//     position: absolute;
+//     left: 91.46%;
+//     right: 0%;
+//     top: -2%;
+//     bottom: 0%;
+
+//     font-family: Zilla Slab Highlight;
+//     font-style: normal;
+//     font-weight: normal;
+//     font-size: 113px;
+//     line-height: 136px;
+//     /* identical to box height */
+//     letter-spacing: 0.05em;
+//     color: #DBAF04;
+
+//   }
+// }
