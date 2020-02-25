@@ -6,19 +6,11 @@
         <% if user_signed_in? %>
           <li class="nav-item active d-flex align-items-stretch mt-2 p-1">
             <div class="dropdown show">
-              <a class="dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+              <div id="menu-bar-open">
                 <%= image_tag "menu-img.png", alt: "Menu image" %>
-              </a>
-              <div class="dropdown-menu menu-list" aria-labelledby="dropdownMenuLink">
-                <%= link_to "Home", root_path, class: "dropdown-item" %>
-                <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
-                <% if policy(Product).new? %>
-                  <%= link_to "Add product", new_product_path, class: "dropdown-item" %>
-                <% end %>
-                  <%= link_to "Your Orders", orders_path, class: "dropdown-item" %>
-                  <%= link_to 'Your Sold Orders', sold_products_orders_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
+
             </div>
           </li>
 
