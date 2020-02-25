@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class="row d-flex justify-content-center">
-    <div class="col-sm-6">
+    <div class="col-sm-6 format-form">
       <h1>Log in</h1>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,23 +17,25 @@
 
         <div class="container">
           <div class="row form-actions">
-            <%= f.button :submit, "Join us !", class: "btn btn-secondary button-log" %>
+            <%= f.button :submit, "Join us !", class: "btn btn-success button-log mt-2" %>
           </div>
         </div>
 
       <% end %>
 
       <div class="container">
-        <div class="row mt-4">
+        <div class="row mt-4 links-login">
 
-          <button class="btn btn-outline-secondary render-links-button">
+          <button class="btn btn-outline-success render-links-button mt-2">
             <%= render "devise/shared/links" %>
           </button>
 
+          <div class="forgot-pass mt-4">
+            <%= render "devise/shared/forgot-pass" %>
+          </div>
+
         </div>
-
       </div>
-
     </div>
   </div>
 </div>

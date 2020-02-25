@@ -5,9 +5,21 @@
   border-radius: 4px;
   box-shadow: 3px 4px 15px rgba(255, 255, 255, 0.16);
   border: none;
+  font-family: $my-font;
   .product-name {
     text-decoration: none;
     color: rgb(238,195,27);
+  }
+  p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 31px;
+
+  }
+
+  a {
+    font-style: normal;
   }
 }
 
