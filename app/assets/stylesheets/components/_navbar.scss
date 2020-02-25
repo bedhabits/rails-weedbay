@@ -1,9 +1,6 @@
 .navbar-weedbay {
   justify-content: space-between;
   background-color: rgba(43,43,43,1);
-  // position:sticky;
-  // top:0;
-  // z-index: 9999;
 }
 
 .navbar-weedbay .navbar-collapse {
@@ -11,9 +8,14 @@
 }
 
 .navbar-weedbay .navbar-brand img {
-  width: 40px;
+  width: 50px;
 }
 
+.navbar-brand {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 40px;
+}
 
 #cart-dropdown {
   position: absolute;
@@ -54,6 +56,13 @@
   color:#EEC319;
 }
 
+
+.menu-list {
+  background-color: #eec319;
+  background-clip: initial;
+  border: 1px solid #495057;
+  border-radius: 3px;
+}
 
 .weedbay-btn {
   color: white;
@@ -104,3 +113,4 @@ th, td{
     text-decoration: none;
   }
 }
+

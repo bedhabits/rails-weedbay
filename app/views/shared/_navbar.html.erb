@@ -1,11 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-weedbay fixed-top">
   <div class="d-flex flex-row">
     <div class="d-flex align-items-strech ml-4">
-      <div class="p-2">
-        <%= link_to "/", class: "navbar-brand" do %>
-          <%= image_tag "https://i1.wp.com/medicannabis.com.au/wp-content/uploads/2019/06/MediCannabis_Isotype_RGB-01-800x800.png?ssl=1" %>
-        <% end %>
-      </div>
 
       <div class="p-2">
         <% if user_signed_in? %>
@@ -14,7 +9,7 @@
               <a class="dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= image_tag "menu-img.png", alt: "Menu image" %>
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <div class="dropdown-menu menu-list" aria-labelledby="dropdownMenuLink">
                 <%= link_to "Home", root_path, class: "dropdown-item" %>
                 <%= link_to "Profile", edit_user_registration_path, class: "dropdown-item" %>
                 <% if policy(Product).new? %>
@@ -26,6 +21,12 @@
               </div>
             </div>
           </li>
+
+          <div class="p-2 navbar-brand">
+            <%= link_to "/" do %>
+              <%= image_tag "https://i1.wp.com/medicannabis.com.au/wp-content/uploads/2019/06/MediCannabis_Isotype_RGB-01-800x800.png?ssl=1" %>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>
@@ -68,12 +69,24 @@
 
           </div>
           <div class="p-2 d-flex justify-content-center">
-           <% else %>
-              <div class="render-links-button nav-item d-flex justify-content-center mt-2" style="border-color: rgba(238, 195, 25, 1);">
-                <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-              </div>
+          <% else %>
+            <div class="render-links-button nav-item d-flex justify-content-center mt-2" style="border-color: rgba(238, 195, 25, 1);">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </div>
 
-           <% end %>
+            <div class="p-2 navbar-brand">
+              <%= link_to "/" do %>
+                <%= image_tag "https://i1.wp.com/medicannabis.com.au/wp-content/uploads/2019/06/MediCannabis_Isotype_RGB-01-800x800.png?ssl=1" %>
+              <% end %>
+            </div>
+
+            <!-- <div class="logo-text">
+              <%= link_to "/" do %>
+                <p class="w-text">w</p><p class="eedbay-text">eedbay</p><p class="exclamation-mark">!</p>
+              <% end %>
+            </div> -->
+
+          <% end %>
           </div>
         </div>
       </ul>
