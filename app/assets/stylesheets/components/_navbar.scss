@@ -64,6 +64,20 @@
   border-radius: 3px;
 }
 
+#dropdownMenuLink img {
+  border-radius: 30%;
+}
+
+.img-avatar {
+  vertical-align: middle;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 40%;
+}
+
 .weedbay-btn {
   color: white;
   letter-spacing: 0;
@@ -112,4 +126,3 @@ th, td{
     font-weight: bold;
     text-decoration: none;
   }
-}
