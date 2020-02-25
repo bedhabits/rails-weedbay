@@ -20,21 +20,42 @@
 #cart-dropdown {
   position: absolute;
   right: 63px;
-  top: 65px;
-  width:360px;
+  top: 69px;
+  width:482px;
   display: none;
   color:white;
-  border:1px solid #ced4da;
-  background-color:#EEC319;
+  background-color: #EEC319;
+  border-radius: 3px;
+  padding: 20px;
 }
 
-.total_line {
+#cart-dropdown:after {
+  bottom: 100%;
+  left: 89%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #EEC319;
+  border-width: 13px;
+  margin-left: -23px;
+}
+
+.total-cart{
+  margin: 16px 0;
+  list-style: none;
+  display: flex;
+  justify-content: inherit;
   border-top: 2px solid green;
+  padding-left: 0;
 }
 
 .fa-shopping-cart {
   color:#EEC319;
 }
+
 
 .menu-list {
   background-color: #eec319;
@@ -43,75 +64,53 @@
   border-radius: 3px;
 }
 
+.weedbay-btn {
+  color: white;
+  letter-spacing: 0;
+  transition: 0.5s;
+}
 
-// .logo-text {
-//   /* logo-text */
-
-//   position: absolute;
-//   width: 316px;
-//   height: 124px;
-//   left: 650px;
-//   top: -21px;
-//   margin-top: -11px;
-
-//   .w-text {
-//     position: absolute;
-//     left: 0%;
-//     right: 85.13%;
-//     top: 21.38%;
-//     bottom: 17.65%;
-
-//     font-family: against myself;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 76px;
-//     line-height: 87px;
-//     letter-spacing: 0.05em;
-
-//     /* yellow */
-//     color: #EEC319;
-//     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-
-//   }
-
-//   .eedbay-text {
-//     position: absolute;
-//     left: 16.77%;
-//     right: 14.24%;
-//     top: 48.97%;
-//     bottom: 22.06%;
-
-//     font-family: against myself;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 46px;
-//     line-height: 53px;
-//     /* identical to box height */
-//     letter-spacing: 0.05em;
-
-//     /* yellow */
-//     color: #EEC319;
-//     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
-//   }
+.weedbay-btn:hover, .weedbay-btn:active {
+  letter-spacing: 5px;
+  text-decoration:none;
+  color: white;
+}
 
 
-//   .exclamation-mark {
-//     /* exclamation-mark */
+.weedbay-btn:after,
+.weedbay-btn:before {
+  border: 1px solid rgba(#fff, 0);
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0px;
+}
 
-//     position: absolute;
-//     left: 91.46%;
-//     right: 0%;
-//     top: -2%;
-//     bottom: 0%;
+.weedbay-btn:hover:after,
+.weedbay-btn:hover:before {
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 100%;
+}
 
-//     font-family: Zilla Slab Highlight;
-//     font-style: normal;
-//     font-weight: normal;
-//     font-size: 113px;
-//     line-height: 136px;
-//     /* identical to box height */
-//     letter-spacing: 0.05em;
-//     color: #DBAF04;
+.weedbay-btn:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 100%;
+}
 
-//   }
-// }
+th, td{
+  padding: 8px 8px;
+}
+
+.empty-cart{
+  color: white;
+  &:hover{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
