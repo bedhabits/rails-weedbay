@@ -10,7 +10,7 @@
         <li>Origin: <%= product.origin %></li>
       </ul>
       <p>Price: <%= product.price %></p>
-      <%= button_to 'Add to cart', product_orders_path(product_id: product.id), remote: true, class: "btn btn-secondary" %>
+      <%= button_to 'Add to cart', product_orders_path(product_id: product.id), remote: true, class: "btn btn-success button-log" %>
     </div>
   </div>
 </div>
