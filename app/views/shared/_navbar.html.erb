@@ -46,7 +46,7 @@
           <div class="p-2 mr-2 ml-3">
             <li class="nav-item dropdown">
               <% if current_user.photo.attached? %>
-                <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "img-avatar" %>
+                <%= cl_image_tag current_user.photo.key, width: 1100, height: 1100, crop: :thumb, gravity: :face, class: "img-avatar" %>
               <% end %>
             </li>
           </div>
