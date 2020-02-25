@@ -14,16 +14,16 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def update?
-    user_is_owner?
+    record.user == user
   end
 
   def destroy?
-    user_is_owner?
+    record.user == user
   end
 
   private
 
   def user_is_owner?
-    record.user == user || user.admin
+    record.user == user
   end
 end
