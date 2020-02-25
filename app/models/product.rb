@@ -16,7 +16,12 @@ class Product < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :product_search,
-    against: [ :name, :origin, :weed_type ],
+    against: {
+      price: 'A',
+      weed_type: 'B',
+      name: 'C',
+      origin: 'D'
+    },
     associated_against: {
       user: [ :username, :email ]
     },
