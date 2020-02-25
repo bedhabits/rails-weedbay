@@ -6,11 +6,15 @@
         <%= image_tag product.photo_url%>
       </div>
       <ul>
-        <li>Weed Type: <%= product.weed_type %></li>
-        <li>Origin: <%= product.origin %></li>
+        <li style="color: white;">Weed Type: <%= product.weed_type %></li>
+        <li style="color: white;">Origin: <%= product.origin %></li>
       </ul>
-      <p>Price: <%= product.price %></p>
-      <%= button_to 'Add to cart', product_orders_path(product_id: product.id), remote: true, class: "btn btn-success button-log" %>
+      <p style="color: white;">Price: <%= product.price %></p>
+      <% if user_signed_in? %>
+        <%= button_to 'Add to cart', product_orders_path(product_id: product.id), remote: true, class: "btn btn-success button-log" %>
+      <% else %>
+        <%= button_to 'Add to cart', new_user_session_path, class: "btn btn-success button-log" %>
+      <% end -%>
     </div>
   </div>
 </div>

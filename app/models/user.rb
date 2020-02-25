@@ -12,5 +12,4 @@ class User < ApplicationRecord
 
   # user can sell and want to see sold orders
   # has_many :product_orders, through: :products
-
 end

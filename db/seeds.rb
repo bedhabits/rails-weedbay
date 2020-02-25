@@ -15,7 +15,7 @@ Product.destroy_all
 
 
 puts "creating admin user"
-user = User.create!(email: "admin@weedbay.com", password: "123456", address: "Le wagon, Lisbon")
+user = User.create!(email: "admin@weedbay.com", password: "123456", address: "Le wagon, Lisbon", admin: true)
 
 puts "creating all seeds"
 file = 'db/seeds_image.csv'
