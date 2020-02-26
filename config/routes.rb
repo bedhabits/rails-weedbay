@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'products#index'
+  # root to: 'products#index'
+  root to: 'authentications#welcome'
   devise_for :users
   resources :products
   resources :orders do
@@ -18,5 +19,5 @@ Rails.application.routes.draw do
   get 'product_orders/:id', to: 'product_orders#show', as: :product_order
   delete 'product_orders/:id', to: 'product_orders#destroy'
 
-
+  get 'welcome', to: 'authentications#welcome'
 end
