@@ -2,9 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 
-  before_action :check_bob
-  helper_method :answer_yes?
-
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :current_cart
@@ -21,17 +18,6 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
-  def answer_yes?
-    @answer == "yes"
-  end
-
-  def check_bob
-    if answer_yes?
-      redirect_to products_path
-    else
-      redirect_to welcome_path
-    end
-  end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
