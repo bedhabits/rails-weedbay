@@ -1,9 +1,10 @@
 <% products.each do |product| %>
-  <div class="col-sm-4 mt-4">
+  <div class="col-sm-3 mt-4">
     <div class="card product-card">
 
     <%= link_to product_path(product), data: {toggle: 'modal', target: "#modal-product-id-#{product.id}"} do %>
-      <%= image_tag product.photo_url, class: "card-img-top", style: "border-radius: 3px;" %>
+      <!-- <%#= image_tag product.photo_url, class: "card-img-top", style: "border-radius: 3px;" %> -->
+      <div style="background-image: url(<%= url_for(product.photo_url) %>); border-radius: 3px;" class="card-img-top"></div>
     <% end %>
 
     <div class="card-body" style="padding: 1vh;">
@@ -32,7 +33,7 @@
                 <% end %>
               <% end %>
             </p>
-
+            <%= image_tag "rating-stars.png", alt: "rating stars", class: "rating-star" %>
             <%= button_to "Add to cart", product_orders_path(product_id: product.id), class: "btn add-to-cart", remote: true %>
           </div>
         </div>
@@ -40,6 +41,7 @@
       <div class="container">
         <div class="row d-flex justify-content-between">
           <p></p>
+          <%= image_tag "rating-stars.png", alt: "rating stars", class: "rating-star" %>
           <%= button_to "Add to cart", new_user_session_path, class: "btn add-to-cart" %>
         </div>
       </div>
