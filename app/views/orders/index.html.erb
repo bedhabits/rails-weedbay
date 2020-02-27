@@ -3,7 +3,7 @@
 
     <div class="col-sm-6 format-form">
       <h1>All my Orders</h1>
-      
+
       <% @orders.each do |order| %>
         <% if order.user == current_user || current_user.admin %>
       <div class="card mb-5">
@@ -12,16 +12,13 @@
           <p class="card-text">Email: <%= order.email %></p>
           <p class="card-text">Address: <%= order.address %> </p>
           <h6><strong>Products</strong></h6>
-          <% products = order.products.map { |product| product } %>
-          <% products.each do |product| %>
-          <p class="card-text"><%= link_to product.name , product_path(product) %>
-          $<%= product.price %></p>
+          <% order.product_orders.each do |product_order| %>
+            <p class="card-text"><%= product_order.product.name %>
+            $<%= product_order.product.price %> x <%= product_order.quantity %></p>
           <% end %>
           <hr>
           <p class="card-text"><strong>SubTotal:
-            <% total = 0 %>
-            <% products.each {|product| total+=product.price} %>
-            <%= total %>
+            <%= order.sub_total %>
           </strong></p>
           <%= link_to 'Edit', edit_order_path(order) %>
           <%= link_to 'Delete', order_path(order), method: :delete %>
