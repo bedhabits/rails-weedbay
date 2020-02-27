@@ -13,13 +13,11 @@
           <% products = order.products.select {|product| product.user == current_user} %>
           <% products.each do |product| %>
           <p class="card-text"><%= link_to product.name , product_path(product) %>
-          <%= product.price %></p>
+          <%= product.price %> x <%= order.product_orders.find_by(product_id: product.id).quantity %></p>
           <% end %>
           <hr>
           <p class="card-text"><strong>SubTotal:
-            <% total = 0 %>
-            <% products.each {|product| total+=product.price} %>
-            <%= total %>
+            <%= order.sub_total %>
           </strong></p>
 
         </div>
