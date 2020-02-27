@@ -20,7 +20,10 @@ class Product < ApplicationRecord
       price: 'A',
       weed_type: 'B',
       name: 'C',
-      origin: 'D'
+      origin: 'D',
+      effects: 'E',
+      ailment: 'F',
+      flavor: 'G'
     },
     associated_against: {
       user: [ :username, :email ]
