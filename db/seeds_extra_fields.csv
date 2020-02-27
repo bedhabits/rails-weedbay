@@ -1,0 +1,28 @@
+id,effects,ailment,flavor
+1,"Happy, Euphoric, Uplifted, Energetic, Relaxed, Dry Mouth, Paranoid, Anxious","Stress, Depression, Lack of Appetite, Pain","Earthy, Pine"
+2,"Relaxed, Happy, Euphoric, Uplifted, Sleepy, Dry Mouth, Paranoid, Anxious","Stress, Pain, Depression, Insomnia","Berry, Sweet, Blueberry"
+3,"Relaxed, Happy, Euphoric, Sleepy, Uplifted, Dry Mouth, Paranoid, Anxious","Stress, Pain, Depression, Insomnia, Lack of Appetite","Blueberry, Sweet, Berry"
+4,"Relaxed, Happy, Sleepy, Euphoric, Hungry, Dry Mouth, Anxious, Paranoid","Pain, Stress, Insomnia, Depression, Lack of Appetite","Earthy, Sweet"
+5,"Happy, Energetic, Uplifted, Euphoric, Creative, Dry Mouth, Anxious, Paranoid","Stress, Depression, Pain, Lack of Appetite","Earthy, Coffee, Sweet"
+6,"Relaxed, Sleepy, Happy, Euphoric, Uplifted, Dry Mouth, Anxious","Stress, Pain, Insomnia, Depression","Grape, Sweet, Berry"
+7,"Energetic, Happy, Uplifted, Focused, Euphoric, Dry Mouth, Anxious, Paranoid","Stress, Depression, Pain","Citrus, Sweet, Earthy"
+8,"Happy, Energetic, Uplifted, Creative, Euphoric, Dry Mouth, Paranoid, Anxious","Stress, Depression, Pain, Lack of Appetite","Earthy, Pine"
+9,"Relaxed, Sleepy, Happy, Uplifted, Hungry, Dry Mouth, Paranoid, Anxious","Stress, Pain, Insomnia, Inflammation",Sweet
+10,"Happy, Relaxed, Euphoric, Focused, Uplifted, Dry Mouth, Paranoid","Pain, Muscle Spasms, Stress, Depression","Pineapple, Sweet"
+11,"Relaxed, Happy, Euphoric, Sleepy, Uplifted, Dry Mouth, Paranoid, Anxious","Stress, Insomnia, Pain, Lack of Appetite, Muscle Spasms","Berry, Sweet"
+12,"Euphoric, Happy, Energetic, Uplifted, Relaxed, Dry Mouth, Paranoid, Anxious","Stress, Depression, Lack of Appetite, Pain, Insomnia","Earthy, Sweet"
+13,"Happy, Euphoric, Uplifted, Energetic, Relaxed, Dry Mouth, Anxious, Paranoid","Stress, Depression, Pain, Lack of Appetite","Strawberry, Sweet, Berry"
+14,"Happy, Uplifted, Euphoric, Energetic, Creative, Dry Mouth, Paranoid, Anxious","Stress, Depression, Pain","Lemon, Citrus, Sweet"
+15,"Relaxed, Euphoric, Sleepy, Happy, Focused, Dry Mouth, Anxious","Stress, Insomnia, Pain, Depression","Earthy, Pine"
+16,"Relaxed, Sleepy, Happy, Uplifted, Hungry, Dry Mouth, Paranoid, Anxious","Stress, Pain, Insomnia, Inflammation",Sweet
+17,"Relaxed, Sleepy, Happy, Tingly, Hungry, Dry Mouth","Pain, Insomnia, Stress, Muscle Spasms","Sweet, Earthy"
+18,"Relaxed, Happy, Sleepy, Euphoric, Hungry, Dry Mouth, Paranoid, Anxious","Stress, Pain, Depression, Insomnia","Earthy, Sweet"
+19,"Relaxed, Euphoric, Happy, Sleepy, Uplifted, Dry Mouth, Paranoid, Anxious","Stress, Pain, Depression, Insomnia, Lack of Appetite","Earthy, Sweet"
+20,"Relaxed, Sleepy, Happy, Euphoric, Hungry, Dry Mouth, Anxious","Stress, Pain, Insomnia, Depression, Muscle Spasms","Earthy, Sweet, Berry"
+21,"Relaxed, Uplifted, Happy, Talkative, Euphoric, Dry Mouth, Anxious","Depression, Stress, Nausea, Lack of Appetite","Sweet, Earthy"
+22,"Happy, Uplifted, Energetic, Euphoric, Relaxed, Dry Mouth, Anxious, Paranoid","Stress, Depression, Pain, Lack of Appetite","Citrus, Orange, Sweet"
+23,"Happy, Uplifted, Euphoric, Relaxed, Energetic, Dry Mouth, Anxious","Stress, Depression, Pain, Lack of Appetite","Citrus, Orange"
+24,"Happy, Uplifted, Euphoric, Energetic, Relaxed, Dry Mouth, Anxious","Stress, Depression, Pain","Sweet, Earthy"
+25,"Relaxed, Sleepy, Happy, Euphoric, Hungry, Dry Mouth, Paranoid","Stress, Insomnia, Pain, Depression, Lack of Appetite","Berry, Grape, Sweet"
+26,"Relaxed, Happy, Euphoric, Sleepy, Uplifted, Dry Mouth, Paranoid, Anxious","Pain, Stress, Depression, Insomnia, Lack of Appetite",Earthy
+27,"Relaxed, Euphoric, Happy, Focused, Creative, Dry Mouth","Stress, Depression, Pain, Insomnia","Blueberry, Berry, Earthy"
