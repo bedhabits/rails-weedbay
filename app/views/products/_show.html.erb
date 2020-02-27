@@ -1,21 +1,24 @@
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="d-flex justify-content-between">
-        <h1><%= product.name %></h1>
-        <%= image_tag product.photo_url, class: "card-img-top", style:"height: 300px; width: 300px;"%>
-      </div>
-      <ul>
-        <li style="color: white;">Weed Type: <%= product.weed_type %></li>
-        <li style="color: white;">Origin: <%= product.origin %></li>
-      </ul>
-      <p style="color: white;">Price: <%= product.price %></p>
-      <% if user_signed_in? %>
-        <%= button_to 'Add to cart', product_orders_path(product_id: product.id), remote: true, class: "btn btn-success button-log" %>
-      <% else %>
-        <%= button_to 'Add to cart', new_user_session_path, class: "btn btn-success button-log" %>
-      <% end -%>
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+    <div class="d-flex justify-content-between">
+      <h1><%= product.name %></h1>
+      <%= image_tag product.photo_url, class: "card-img-top", style:"height: 300px; width: 300px;"%>
     </div>
+    <ul>
+      <li style="color: white;">Weed Type: <%= product.weed_type %></li>
+      <li style="color: white;">Origin: <%= product.origin %></li>
+      <li style="color: white;">Effects: <%= product.effects %></li>
+      <li style="color: white;">Ailment: <%= product.ailment %></li>
+      <li style="color: white;">flavor: <%= product.flavor %></li>
+    </ul>
+    <p style="color: white;">Price: <%= product.price %></p>
+    <% if user_signed_in? %>
+      <%= button_to 'Add to cart', product_orders_path(product_id: product.id), remote: true, class: "btn btn-success button-log" %>
+    <% else %>
+      <%= button_to 'Add to cart', new_user_session_path, class: "btn btn-success button-log" %>
+    <% end -%>
   </div>
+</div>
 
 
 
