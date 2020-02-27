@@ -6,6 +6,10 @@
   box-shadow: 3px 4px 15px rgba(255, 255, 255, 0.16);
   border: none;
   font-family: $my-font;
+
+  display: flex;
+  // width: 221px;
+
   .product-name {
     text-decoration: none;
     color: rgb(238,195,27);
@@ -13,13 +17,44 @@
   p {
     font-style: normal;
     font-weight: 300;
-    font-size: 22px;
+    font-size: 16px;
     line-height: 31px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 2px;
 
+  }
+
+  p strong {
+    white-space: unset;
+    white-space: unset;
+    font-weight: 400;
+    letter-spacing: 0.7px;
   }
 
   a {
     font-style: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 22px;
   }
 }
 
+.card-img-top {
+  // background-color: white;
+  width: 235px;
+  height: 235px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rating-star {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  align-self: flex-end;
+  margin-top: 11px;
+}
