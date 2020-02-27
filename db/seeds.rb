@@ -19,14 +19,17 @@ user = User.create!(email: "admin@weedbay.com", password: "123456", address: "Le
 
 puts "creating all seeds"
 file = 'db/seeds_image.csv'
-csv_options = { col_sep: ';', headers: :first_row }
+csv_options = { col_sep: ',', headers: :first_row }
 CSV.foreach(file, csv_options) do |csv|
   product = Product.new(
                 name: csv["name"],
                 weed_type: csv["weed_type"],
                 origin: csv["origin"],
                 price: csv["price"],
-                user_id: user.id
+                user_id: user.id,
+                effects: csv["effects"],
+                ailment: csv["ailment"],
+                flavor: csv["flavor"]
                 )
   #upload da imagem para o cloudinary
   file = URI.open(csv["photo_url"])
@@ -36,3 +39,13 @@ CSV.foreach(file, csv_options) do |csv|
 end
 
 puts "done"
+
+# file = 'db/seeds_extra_fields.csv'
+# csv_options = { col_sep: ',', headers: :first_row }
+# CSV.foreach(file, csv_options) do |csv|
+#   puts csv["id"]
+#   product = Product.find(id: csv["id"])
+#   p product.name
+#   # product.update(effects: csv["effects"], ailment: csv["ailment"], flavor: csv["flavor"])
+#   # puts "#{csv["id"]} - #{csv["effects"]} - #{csv["ailment"]} - #{csv["flavor"]}"
+# end
