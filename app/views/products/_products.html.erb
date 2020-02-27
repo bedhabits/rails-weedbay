@@ -2,19 +2,20 @@
   <div class="col-sm-4 mt-4">
     <div class="card product-card">
 
-    <%= link_to product_path(product), data: {toggle: 'modal', target: '#show-modal'} do %>
+    <%= link_to product_path(product), data: {toggle: 'modal', target: "#modal-product-id-#{product.id}"} do %>
       <%= image_tag product.photo_url, class: "card-img-top", style: "border-radius: 3px;" %>
     <% end %>
 
     <div class="card-body" style="padding: 1vh;">
       <div class="d-flex justify-content-between">
-        <%= link_to product.name, product_path(product), class: "card-title product-name", data: {toggle: 'modal', target: '#show-modal'}  %>
+        <%= link_to product.name, product_path(product), class: "card-title product-name", data: {toggle: 'modal', target: "#modal-product-id-#{product.id}"}  %>
         <p><strong><%= product.price %></strong></p>
       </div>
 
       <p class="card-text mt-2"><%= product.user.email %></p>
-
-      <%= render 'show', product: product %>
+      <div class="modal fade bd-example-modal-lg" id="modal-product-id-<%= product.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <%= render 'show', product: product %>
+      </div>
       <% if user_signed_in? %>
         <div class="container">
           <div class="row d-flex justify-content-between">
